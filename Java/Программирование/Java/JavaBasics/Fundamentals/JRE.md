@@ -1,0 +1,6 @@
+**Java Runtime Environment** (сокр. **JRE**; [рус.](https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA "Русский язык") среда выполнения для Java) — минимальная (без компилятора и других средств разработки) реализация [виртуальной машины](https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0 "Виртуальная машина"), необходимая для исполнения [Java](https://ru.wikipedia.org/wiki/Java "Java")-приложений. Состоит из виртуальной машины [Java Virtual Machine](https://ru.wikipedia.org/wiki/Java_Virtual_Machine "Java Virtual Machine") и [библиотеки Java-классов](https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0 "Стандартная библиотека").
+
+JRE распространяется свободно и для большинства платформ может быть загружена с сайта Oracle[[1]](https://ru.wikipedia.org/wiki/Java_Runtime_Environment#cite_note-1).
+
+Средства разработки вместе с JRE входят в [JDK](https://ru.wikipedia.org/wiki/JDK "JDK").
+![[Pasted image 20251222175405.png]]

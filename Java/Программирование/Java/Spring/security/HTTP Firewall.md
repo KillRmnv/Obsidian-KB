@@ -1,0 +1,20 @@
+| №   | Класс фильтра                                                                             | Назначение                                                                               |
+| --- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 1   | **`WebAsyncManagerIntegrationFilter`**                                                    | Интеграция Spring Security с `WebAsyncManager` (для асинхронных запросов)                |
+| 2   | **`SecurityContextHolderFilter`** _(или устаревший `SecurityContextPersistenceFilter`)_   | Создаёт/восстанавливает `SecurityContext` (данные авторизации)                           |
+| 3   | **`HeaderWriterFilter`**                                                                  | Добавляет security-заголовки (X-Frame-Options, X-Content-Type-Options, и т.д.)           |
+| 4   | **`CorsFilter`** _(если включён)_                                                         | Разрешает или блокирует кросс-доменные запросы                                           |
+| 5   | **`CsrfFilter`**                                                                          | Проверяет CSRF-токен (для защиты от подделки запросов)                                   |
+| 6   | **`LogoutFilter`**                                                                        | Обрабатывает `/logout`                                                                   |
+| 7   | **`OAuth2AuthorizationRequestRedirectFilter`** _(если используется OAuth2)_               | Начинает OAuth2 авторизацию                                                              |
+| 8   | **`UsernamePasswordAuthenticationFilter`**                                                | Обрабатывает логин через `username/password`                                             |
+| 9   | **`ConcurrentSessionFilter`** _(если используется управление сессиями)_                   | Контролирует количество активных сессий                                                  |
+| 🔹  | **`JwtTokenFilter`                                                                        | Проверяет JWT и устанавливает `SecurityContext`                                          |
+| 10  | **`BearerTokenAuthenticationFilter`** _(если используется Spring OAuth2 Resource Server)_ | Альтернатива JWT-фильтру для OAuth2                                                      |
+| 11  | **`RequestCacheAwareFilter`**                                                             | Сохраняет URL, чтобы после логина можно было вернуться на предыдущую страницу            |
+| 12  | **`SecurityContextHolderAwareRequestFilter`**                                             | Делает `HttpServletRequest` aware of security (например, `request.getUserPrincipal()`)   |
+| 13  | **`AnonymousAuthenticationFilter`**                                                       | Устанавливает анонимного пользователя, если никто не аутентифицирован                    |
+| 14  | **`SessionManagementFilter`**                                                             | Управляет политикой сессий (создание, фиксация, и т.д.)                                  |
+| 15  | **`ExceptionTranslationFilter`**                                                          | Перехватывает `AccessDeniedException` и `AuthenticationException`, чтобы вернуть 401/403 |
+| 16  | **`FilterSecurityInterceptor`**                                                           | Последний фильтр — проверяет права (`hasRole`, `hasAuthority`)                           |
+| 17  | **`DispatcherServlet`** → **твой контроллер**                                             |                                                                                          |
