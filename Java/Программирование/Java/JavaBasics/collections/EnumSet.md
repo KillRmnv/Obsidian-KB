@@ -1,0 +1,6 @@
+- It extends the [AbstractSet](https://www.geeksforgeeks.org/java/abstractset-class-in-java-with-examples/#:~:text=The%20AbstractSet%20class%20in%20Java,implementation%20of%20the%20Set%20interface.) class and implements the [Set Interface](https://www.geeksforgeeks.org/java/set-in-java/) in Java.
+- The EnumSet class is a member of the [Java Collections Framework](https://www.geeksforgeeks.org/java/collections-in-java-2/) and is not synchronized.
+- It’s a high-performance set implementation, much faster than [HashSet](https://www.geeksforgeeks.org/java/hashset-in-java/).
+- All of the elements in an EnumSet must come from a single [enumeration type](https://www.geeksforgeeks.org/java/enum-in-java/) that is specified when the set is created either explicitly or implicitly.
+- It does not allow null Objects and throws [NullPointerException](https://www.geeksforgeeks.org/java/null-pointer-exception-in-java/) if we do so.
+- It uses a fail-safe iterator, so it won’t throw [ConcurrentModificationException](https://www.geeksforgeeks.org/java/concurrentmodificationexception-in-java-with-examples/) if the collection is modified while iterating

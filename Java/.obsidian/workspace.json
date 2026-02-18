@@ -1,0 +1,219 @@
+{
+  "main": {
+    "id": "4d8bdc6829e794e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "0776635c5b7399dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f1a84028e5fd3873",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Программирование/AI/OCR.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "OCR"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9c1ab9be8b3aef42",
+    "type": "split",
+    "children": [
+      {
+        "id": "b00802a76ac40707",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb2ac5bc11c8c840",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c4283db6a1fc8046",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9e4a1fb1ab85ee43",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 376.5
+  },
+  "right": {
+    "id": "07bd64c8331c2f37",
+    "type": "split",
+    "children": [
+      {
+        "id": "b4e3a0f9bc9767c7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c18e662d81d855e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки"
+            }
+          },
+          {
+            "id": "88e8dc95eda3b57d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки"
+            }
+          },
+          {
+            "id": "88592f3b9328345f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "30645c8ae1e1a556",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f1a84028e5fd3873",
+  "lastOpenFiles": [
+    "Программирование/AI/RAG/Механизмы извлечения текста.md",
+    "Программирование/AI/OCR.md",
+    "Программирование/Java/Requirements/Questions v1.0.md",
+    "Программирование/AI/RAG",
+    "Программирование/AI",
+    "Программирование/Java/JavaBasics/ООП/Наследование.md",
+    "POJO.md",
+    "hashCode() и equals().md",
+    "Программирование/Java/JavaBasics/Fundamentals/Equals.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Static vs Dynamic Binding in Java.md",
+    "Программирование/Java/JavaBasics/Fundamentals/JRE.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Таблица методов.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Важные моменты.md",
+    "Программирование/Java/JavaBasics/collections/HashMap implementatoin.md",
+    "Программирование/Java/JavaBasics/DataTypes/Optionals.md",
+    "Optional.md",
+    "ковариантность типов.md",
+    "Run-Time Data Areas.md",
+    "Программирование/Java/JavaBasics/Concurrency/volatile.md",
+    "Happens-before.md",
+    "Atomic types.md",
+    "FunctionalInterface.md",
+    "AutoCloseable.md",
+    "Cloneable.md",
+    "Программирование/Java/JavaBasics/Exceptions/Exceptions.md",
+    "Программирование/Java/JavaBasics/ООП/Casting.md",
+    "interface.md",
+    "ClassLoader.md",
+    "Untitled.base",
+    "Untitled.canvas",
+    "IDE/zed",
+    "IDE/idea/pics/Pasted image 20260215121928.png",
+    "IDE/idea/pics/Pasted image 20260215125046.png",
+    "IDE/idea/pics",
+    "IDE/idea",
+    "IDE/idea/pics/Pasted image 20260215122057.png",
+    "IDE/idea/pics/Pasted image 20260215124121.png",
+    "IDE/Vim",
+    "IDE/idea/pics/Pasted image 20260215124756.png",
+    "IDE/idea/pics/Pasted image 20260215124549.png",
+    "IDE/idea/pics/Pasted image 20260215124418.png",
+    "IDE/idea/pics/Pasted image 20260215124254.png",
+    "IDE/idea/pics/Pasted image 20260215123906.png",
+    "IDE/idea/pics/Pasted image 20260215123713.png",
+    "IDE",
+    "Программирование/AI/Vibe/Benchmarks",
+    "Программирование/AI/Vibe"
+  ]
+}
