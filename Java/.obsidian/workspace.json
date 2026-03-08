@@ -4,35 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "8b1ba9a1703de48d",
+        "id": "7be8cef8fec49b68",
         "type": "tabs",
         "children": [
           {
-            "id": "74af860f7681f0b5",
+            "id": "155f5fc8bf6f33f8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Программирование/AI/Нейронки/Базовые понятия.md",
+                "file": "ковариантность типов.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Базовые понятия"
+              "title": "ковариантность типов"
             }
           },
           {
-            "id": "de748fa2cc33f7b2",
+            "id": "c38e1d50028fabef",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Configs/zed.md",
-                "mode": "source",
-                "source": false
+                "file": "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf"
               },
-              "icon": "lucide-file",
-              "title": "zed"
+              "icon": "lucide-file-text",
+              "title": "Joshua Bloch - Effective Java (3rd) - 2018 (1)"
             }
           }
         ],
@@ -93,7 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 376.5
+    "width": 266.5
   },
   "right": {
     "id": "07bd64c8331c2f37",
@@ -109,6 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +117,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки"
+              "title": "Обратные ссылки для Joshua Bloch - Effective Java (3rd) - 2018 (1)"
             }
           },
           {
@@ -127,11 +126,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки"
+              "title": "Исходящие ссылки из Joshua Bloch - Effective Java (3rd) - 2018 (1)"
             }
           },
           {
@@ -155,20 +155,41 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура Joshua Bloch - Effective Java (3rd) - 2018 (1)"
+            }
+          },
+          {
+            "id": "93e45b60985b1fdb",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "smart-connections",
+              "title": "Connections"
+            }
+          },
+          {
+            "id": "2800d2743363ad7a",
+            "type": "leaf",
+            "state": {
+              "type": "smart-lookup-view",
+              "state": {},
+              "icon": "smart-lookup",
+              "title": "Lookup"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 362.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,57 +199,76 @@
       "daily-notes:Сегодняшняя заметка": false,
       "templates:Вставить шаблон": false,
       "command-palette:Открыть палитру команд": false,
-      "bases:Создать новую базу": false
+      "bases:Создать новую базу": false,
+      "markdown-importer:Импорт Markdown-файлов": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-importer:Open Importer": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Smart Lookup: Open lookup view": false,
+      "smart-connections:Smart Connections: Open random connection": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "obsidian-livesync:P2P Replicator": false,
+      "obsidian-livesync:Show Log": false,
+      "obsidian-livesync:Replicate": false,
+      "obsidian-livesync:Show Customization sync": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false,
+      "obsidian-map-view:Open map view": false,
+      "obsidian-tts:Text to Speech": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "de748fa2cc33f7b2",
+  "active": "c38e1d50028fabef",
   "lastOpenFiles": [
+    "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf",
+    "АИПОС/Вопросы/21 вопрос.md",
+    "АИПОС/Вопросы/17 вопрос.md",
+    "АИПОС/Вопросы/11 вопрос.md",
+    "АИПОС/Вопросы/8 вопрос.md",
+    "АИПОС/Вопросы/6 вопрос.md",
+    "АИПОС/Вопросы/3 вопрос.md",
+    "АИПОС/Вопросы/2 вопрос.md",
+    "АИПОС/Вопросы/1 ВОПРОС ПРОРАБОТАТЬ.md",
+    "АИПОС/Вопросы/1 вопрос.md",
+    "Программирование/Java/Requirements/Questions v1.0.md",
+    "hashCode() и equals().md",
+    "Happens-before.md",
+    "Cleaner API.md",
+    "AutoCloseable.md",
+    "Sources/IMG_20250720_000455.jpg",
+    "Sources/IMG_20250719_172639.jpg",
+    "Sources/IMG_20250719_172127.jpg",
+    "Sources/Ethernet Frame.png",
+    "Sources/20250912131835.png",
+    "OutOfMemoryError.md",
+    "interface.md",
+    "ClassLoader.md",
+    "Atomic types.md",
+    "разница между статической и динамической загрузкой классов.md",
+    "ковариантность типов.md",
+    "Excalidraw/Drawing 2026-03-08 17.22.51.excalidraw.md",
+    "Excalidraw",
+    "Браузеры/zen/Движки поиска.md",
     "Configs/Ubuntu/brew.md",
-    "Configs/zed.md",
     "Configs/Ubuntu/fish.md",
-    "Configs/Ubuntu/Wezterm.md",
-    "Configs/Ubuntu/Setup.md",
     "Configs/Ubuntu/jq.md",
-    "Configs/Ubuntu/gh.md",
-    "Configs/Wezterm config.md",
-    "Desktop/Hyprland/Config.md",
     "Configs/Ubuntu",
     "Configs",
-    "Desktop/Hyprland/Base Keymap.md",
-    "Браузеры/zen/Клавиши.md",
     "Desktop/Hyprland",
-    "Desktop/Без названия.md",
     "Desktop",
-    "Браузеры/zen/Движки поиска.md",
-    "IDE/zed/zed.md",
-    "Программирование/AI/Нейронки/Слой.md",
-    "Программирование/AI/Нейронки/переобучение.md",
     "Браузеры/zen",
     "Браузеры",
-    "Программирование/AI/Нейронки/Процесс работы.md",
-    "Программирование/AI/Нейронки/Обратный проход.md",
-    "Программирование/AI/Нейронки/Базовые понятия.md",
-    "Программирование/AI/Нейронки/Архитектуры нейросетей.md",
-    "Программирование/AI/Нейронки/Входы и выходы нейронов.md",
-    "Программирование/AI/Нейронки/LLM.md",
-    "Программирование/AI/Нейронки/прямой проход.md",
-    "Программирование/AI/Нейронки/ФУНКЦИЯ АКТИВАЦИИ.md",
-    "Программирование/AI/Нейронки/Тензор.md",
-    "Программирование/AI/Статка/Series Pandas.md",
     "Программирование/AI/Нейронки",
     "Программирование/Databases/NonRelational/Sparql",
     "Программирование/AI/RAG",
-    "Программирование/AI",
     "Untitled.canvas",
     "IDE/idea/pics/Pasted image 20260215121928.png",
     "IDE/idea/pics/Pasted image 20260215125046.png",
     "IDE/idea/pics/Pasted image 20260215122057.png",
     "IDE/idea/pics/Pasted image 20260215124121.png",
-    "IDE/idea/pics/Pasted image 20260215124756.png",
-    "IDE/idea/pics/Pasted image 20260215124549.png",
-    "IDE/idea/pics/Pasted image 20260215124418.png",
-    "IDE/idea/pics/Pasted image 20260215124254.png",
-    "IDE/idea/pics/Pasted image 20260215123906.png",
-    "IDE/idea/pics/Pasted image 20260215123713.png"
+    "IDE/idea/pics/Pasted image 20260215124756.png"
   ]
 }
