@@ -1,15 +1,11 @@
 [
-  "obsidian-icon-folder",
   "quickadd",
   "omnisearch",
   "editing-toolbar",
   "obsidian-importer",
-  "smart-connections",
   "obsidian-linter",
   "obsidian-advanced-slides",
   "obsidian-mind-map",
-  "obsidian-livesync",
-  "obsidian-annotator",
   "pdf-plus",
   "obsidian-pandoc",
   "obsidian-latex-suite",
@@ -17,7 +13,6 @@
   "obsidian-auto-link-title",
   "text-extractor",
   "drawio-obsidian",
-  "ink",
   "obsidian-map-view",
   "obsidian-plantuml",
   "simple-canvasearch",
@@ -31,5 +26,7 @@
   "templater-obsidian",
   "obsidian-excalidraw-plugin",
   "pixel-perfect-image",
-  "obsidian-dictionary-plugin"
+  "obsidian-dictionary-plugin",
+  "obsidian-smart-typography",
+  "remotely-save"
 ]

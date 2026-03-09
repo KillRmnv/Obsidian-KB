@@ -25,10 +25,7 @@
     }
   },
   "smart_notices": {
-    "muted": {
-      "embedding_progress": true,
-      "done_initial_scan": true
-    }
+    "muted": {}
   },
   "smart_view_filter": {
     "expanded_view": false,
@@ -71,6 +68,6 @@
     "results_limit": 20
   },
   "embedding_models": {
-    "default_model_key": "transformers#1772973379126"
+    "default_model_key": "transformers#1772996045439"
   }
 }

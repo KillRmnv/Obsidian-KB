@@ -1,6 +1,6 @@
 ![[Pasted image 20251002195534.png]]
 
-![[Pasted image 20251002195556.png]]
+![[Pasted image 20251002195556.png|20]]
 Exceptions can occur due to several reasons, such as:
 
 - Invalid user input
