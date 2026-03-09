@@ -4,37 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "7be8cef8fec49b68",
+        "id": "8dad778de6f29fee",
         "type": "tabs",
         "children": [
           {
-            "id": "155f5fc8bf6f33f8",
+            "id": "5a11283c84ce32eb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ковариантность типов.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "ковариантность типов"
-            }
-          },
-          {
-            "id": "c38e1d50028fabef",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Joshua Bloch - Effective Java (3rd) - 2018 (1)"
+              "title": "Новая вкладка"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,41 +138,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура Joshua Bloch - Effective Java (3rd) - 2018 (1)"
-            }
-          },
-          {
-            "id": "93e45b60985b1fdb",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-view",
-              "state": {},
-              "icon": "smart-connections",
-              "title": "Connections"
-            }
-          },
-          {
-            "id": "2800d2743363ad7a",
-            "type": "leaf",
-            "state": {
-              "type": "smart-lookup-view",
-              "state": {},
-              "icon": "smart-lookup",
-              "title": "Lookup"
+              "title": "Структура"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 362.5
+    "width": 362.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,14 +166,7 @@
       "markdown-importer:Импорт Markdown-файлов": false,
       "omnisearch:Omnisearch": false,
       "obsidian-importer:Open Importer": false,
-      "smart-connections:Smart Connections: Open connections view": false,
-      "smart-connections:Smart Lookup: Open lookup view": false,
-      "smart-connections:Smart Connections: Open random connection": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "obsidian-livesync:P2P Replicator": false,
-      "obsidian-livesync:Show Log": false,
-      "obsidian-livesync:Replicate": false,
-      "obsidian-livesync:Show Customization sync": false,
       "pdf-plus:PDF++: Toggle auto-copy": false,
       "pdf-plus:PDF++: Toggle auto-focus": false,
       "pdf-plus:PDF++: Toggle auto-paste": false,
@@ -218,43 +174,50 @@
       "obsidian-tts:Text to Speech": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "remotely-save:Remotely Save": false
     }
   },
-  "active": "c38e1d50028fabef",
+  "active": "cb2ac5bc11c8c840",
   "lastOpenFiles": [
     "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf",
-    "АИПОС/Вопросы/21 вопрос.md",
-    "АИПОС/Вопросы/17 вопрос.md",
-    "АИПОС/Вопросы/11 вопрос.md",
-    "АИПОС/Вопросы/8 вопрос.md",
-    "АИПОС/Вопросы/6 вопрос.md",
-    "АИПОС/Вопросы/3 вопрос.md",
-    "АИПОС/Вопросы/2 вопрос.md",
-    "АИПОС/Вопросы/1 ВОПРОС ПРОРАБОТАТЬ.md",
-    "АИПОС/Вопросы/1 вопрос.md",
-    "Программирование/Java/Requirements/Questions v1.0.md",
-    "hashCode() и equals().md",
-    "Happens-before.md",
-    "Cleaner API.md",
-    "AutoCloseable.md",
-    "Sources/IMG_20250720_000455.jpg",
-    "Sources/IMG_20250719_172639.jpg",
-    "Sources/IMG_20250719_172127.jpg",
-    "Sources/Ethernet Frame.png",
-    "Sources/20250912131835.png",
-    "OutOfMemoryError.md",
-    "interface.md",
-    "ClassLoader.md",
-    "Atomic types.md",
-    "разница между статической и динамической загрузкой классов.md",
-    "ковариантность типов.md",
-    "Excalidraw/Drawing 2026-03-08 17.22.51.excalidraw.md",
+    "Программирование/AI/Нейронки/архитектура/Сверточные.md",
+    "Программирование/AI/Нейронки/архитектура/Планировщик.md",
+    "Программирование/AI/Нейронки/архитектура/transform.md",
+    "Программирование/AI/Нейронки/архитектура/Валидационная выборка.md",
+    "image-5.png",
+    "image-4.png",
+    "image-3.png",
+    "image-2.png",
+    "image-1.png",
+    "image.png",
+    "Программирование/AI/Нейронки/Базовые понятия.md",
+    "Программирование/AI/Нейронки/ФУНКЦИЯ АКТИВАЦИИ.md",
+    "Программирование/AI/Нейронки/архитектура/Архитектуры нейросетей.md",
+    "Программирование/AI/Нейронки/архитектура",
+    "Программирование/Java/JavaBasics/Exceptions/Exceptions.md",
+    "pics/Pasted image 20251002195556.png",
+    "Программирование/Java/JavaBasics/Exceptions/try catch finally return.md",
+    "Программирование/Java/JavaBasics/Functional/Lambda Expression.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Static vs Dynamic Binding in Java.md",
+    "Программирование/Java/JavaBasics/Fundamentals/JIT-компилятора.md",
+    "Программирование/Java/JavaBasics/Fundamentals/JDK.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Equals.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Documentation.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Byte Code Java.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Break.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Таблица методов.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Виртуальная машина Java.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Важные моменты.md",
+    "Программирование/Java/JavaBasics/Generics/Reflection+Generics.md",
+    "Программирование/Java/JavaBasics/Generics/Recusive Generics.md",
+    "Программирование/Java/JavaBasics/Generics/Read&Write <?>.md",
+    "Программирование/Java/JavaBasics/Generics/Generics.md",
+    "Программирование/Java/JavaBasics/Generics/Generic Data Types.md",
+    "pics/Pasted image 20260113215920.png",
+    "pics/Pasted image 20260113204201.png",
+    "pics/Pasted image 20260113133417.png",
     "Excalidraw",
-    "Браузеры/zen/Движки поиска.md",
-    "Configs/Ubuntu/brew.md",
-    "Configs/Ubuntu/fish.md",
-    "Configs/Ubuntu/jq.md",
     "Configs/Ubuntu",
     "Configs",
     "Desktop/Hyprland",
@@ -262,13 +225,6 @@
     "Браузеры/zen",
     "Браузеры",
     "Программирование/AI/Нейронки",
-    "Программирование/Databases/NonRelational/Sparql",
-    "Программирование/AI/RAG",
-    "Untitled.canvas",
-    "IDE/idea/pics/Pasted image 20260215121928.png",
-    "IDE/idea/pics/Pasted image 20260215125046.png",
-    "IDE/idea/pics/Pasted image 20260215122057.png",
-    "IDE/idea/pics/Pasted image 20260215124121.png",
-    "IDE/idea/pics/Pasted image 20260215124756.png"
+    "Untitled.canvas"
   ]
 }

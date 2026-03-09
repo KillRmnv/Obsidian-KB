@@ -1,16 +1,16 @@
 # Создай файл .gitignore в корне репо:
 cat > .gitignore << 'EOF'
 # Obsidian — локальные настройки (не коммитить)
-.obsidian/app.json
-.obsidian/appearance.json
-.obsidian/core-plugins-migration.json
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/workspace-desktop.json
-.obsidian/graph.json
-.obsidian/caches/
-.obsidian/plugins/obsidian-git/
-
+#.obsidian/app.json
+#.obsidian/appearance.json
+#.obsidian/core-plugins-migration.json
+#.obsidian/workspace.json
+#.obsidian/workspace-mobile.json
+#.obsidian/workspace-desktop.json
+#.obsidian/graph.json
+#.obsidian/caches/
+#.obsidian/plugins/obsidian-git/
+.smart_env/
 # Системные файлы
 .DS_Store
 Thumbs.db
