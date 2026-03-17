@@ -1,5 +1,4 @@
 ```bash
-
 #!/bin/bash
 
 # Обновление системы
@@ -28,7 +27,14 @@ sudo apt install -y python3.12 python3.12-venv
 
 # 4. JDK
 sudo apt install -y openjdk-25-jdk openjdk-25-source
+sudo apt install openjdk-21-jdk
 
+# JAVA_HOME без .bashrc
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+# Проверить
+$JAVA_HOME/bin/java -version  # Java 21
 # 5. POSTGRES
 sudo apt install -y postgresql postgresql-contrib
 # 16. NODE.JS (LTS версия)
@@ -42,42 +48,41 @@ sudo curl -fsSL https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo g
 # Добавляем сам репозиторий
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list'
 sudo apt update
-#Устанавливаем версию для рабочего стола (desktop mode)
+# Устанавливаем версию для рабочего стола (desktop mode)
 sudo apt install -y pgadmin4-desktop
 
-
-#6. NEOVIM & NEOVIDE
+# 6. NEOVIM & NEOVIDE
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
 sudo apt install -y neovim
-#Neovide (через cargo, если есть, или скачивание бинарника)
+# Neovide (через cargo, если есть, или скачивание бинарника)
 wget https://github.com/neovide/neovide/releases/latest/download/neovide-linux-x86_64.tar.gz
 tar -xvf neovide-linux-x86_64.tar.gz
 sudo mv neovide /usr/local/bin/
 rm neovide-linux-x86_64.tar.gz
 
-#7. ZED EDITOR
+# 7. ZED EDITOR
 sudo curl -f https://zed.dev/install.sh | sh
 
 
-#9. OBSIDIAN (AppImage или Deb)
- wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.3/obsidian_1.5.3_amd64.deb
-sudo apt install -y ./obsidian_1.5.3_amd64.deb
- rm obsidian_1.5.3_amd64.deb
+# 9. OBSIDIAN (AppImage или Deb)
+ wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.4/obsidian_1.12.4_amd64.deb
+sudo apt install -y ./obsidian_1.12.4_amd64.deb
+ rm obsidian_1.12.4_amd64.deb
 
-#10. WIRESHARK
+# 10. WIRESHARK
 sudo apt install -y wireshark
-#Настройка прав для непривилегированного пользователя
+# Настройка прав для непривилегированного пользователя
 sudo dpkg-reconfigure wireshark-common
 
-#11. TeXStudio
+# 11. TeXStudio
 sudo add-apt-repository ppa:sunderme/texstudio -y
 sudo apt update
 sudo apt install -y texstudio
 
 
 
-#14. Hugging Face CLI & OpenCode
+# 14. Hugging Face CLI & OpenCode
 pip install -U "huggingface_hub[cli]"
 # Для opencode обычно используется специфичный скрипт или pip, если это клиент
 
@@ -89,7 +94,7 @@ sudo curl -fsSL https://qwen-code-assets.oss-cn-hangzhou.aliyuncs.com/installati
 #mistral vibe
 sudo curl -LsSf https://mistral.ai/vibe/install.sh | bash
 
-#OpenBLAS
+# OpenBLAS
 sudo apt update
 sudo apt install libopenblas-dev libopenblas0
 
@@ -135,9 +140,6 @@ bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
  sudo apt-get install pass
 
 
-
-
-
 #fzf
 sudo apt install fzf
 sudo apt install pipx
@@ -157,7 +159,6 @@ sudo curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # install Posting (will also quickly install Python 3.13 if needed)
 uv tool install --python 3.13 posting
-
 
 
 #oxker
@@ -182,16 +183,13 @@ if ! grep -q '.local/bin' ~/.bashrc; then
 fi
 
 
-
 curl -sS https://starship.rs/install.sh | sh
 
 sudo apt update
 sudo apt install -y libfuse2 libgtk-4-1 libadwaita-1-0 libvte-2.91-0
 
 
-
 #warp https://www.warp.dev/download
-
 
 #kaggle
 pip install kaggle
@@ -211,5 +209,47 @@ exec fish
 npm install -g cline
 #kilocode
 npm install -g @kilocode/cli
+
+sudo apt install net-tools
+
+# macOS / Linux git lfs
+curl -LsSf https://astral.sh/uv/install.sh | sh
+sudo apt install git-lfs
+git lfs install
+
+
+sudo apt update
+sudo apt install -y mpv libmpv-dev meson ninja-build gcc git pkg-config libwayland-dev wayland-protocols libpipewire-0.3-dev libsystemd-dev
+
+
+git clone --single-branch https://github.com/GhostNaN/mpvpaper
+# Build
+cd mpvpaper
+meson setup build --prefix=/usr/local
+ninja -C build
+# Install
+ninja -C build install
+
+#zoxide
+brew install zoxide
+#CoolReader
+sudo apt update && sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# flatpak install flathub io.gitlab.coolreader_ng.crqt-ng
+
+brew install dust
+
+sudo apt update && sudo apt install klavaro
+
+
+mkdir app
+cd app
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp
+
+mkdir -p build && cd build
+cmake .. -DLLAMA_AVX2=ON -DLLAMA_F16C=ON -DLLAMA_FMA=ON -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release -j12
+
 
 ```

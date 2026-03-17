@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8dad778de6f29fee",
+        "id": "c7a8d6d6a8b00610",
         "type": "tabs",
         "children": [
           {
-            "id": "5a11283c84ce32eb",
+            "id": "c47782d09fad83d4",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Программирование/AI/llama.cpp.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Новая вкладка"
+              "title": "llama.cpp"
             }
           }
         ]
@@ -145,14 +149,23 @@
               "icon": "lucide-list",
               "title": "Структура"
             }
+          },
+          {
+            "id": "3d9323b0ce924d30",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 362.5,
-    "collapsed": true
+    "width": 362.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,56 +188,58 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "remotely-save:Remotely Save": false
+      "remotely-save:Remotely Save": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "cb2ac5bc11c8c840",
+  "active": "c47782d09fad83d4",
   "lastOpenFiles": [
-    "Программирование/Java/Requirements/Joshua Bloch - Effective Java (3rd) - 2018 (1).pdf",
-    "Программирование/AI/Нейронки/архитектура/Сверточные.md",
-    "Программирование/AI/Нейронки/архитектура/Планировщик.md",
-    "Программирование/AI/Нейронки/архитектура/transform.md",
-    "Программирование/AI/Нейронки/архитектура/Валидационная выборка.md",
-    "image-5.png",
-    "image-4.png",
-    "image-3.png",
-    "image-2.png",
-    "image-1.png",
-    "image.png",
-    "Программирование/AI/Нейронки/Базовые понятия.md",
-    "Программирование/AI/Нейронки/ФУНКЦИЯ АКТИВАЦИИ.md",
-    "Программирование/AI/Нейронки/архитектура/Архитектуры нейросетей.md",
-    "Программирование/AI/Нейронки/архитектура",
-    "Программирование/Java/JavaBasics/Exceptions/Exceptions.md",
-    "pics/Pasted image 20251002195556.png",
-    "Программирование/Java/JavaBasics/Exceptions/try catch finally return.md",
-    "Программирование/Java/JavaBasics/Functional/Lambda Expression.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Static vs Dynamic Binding in Java.md",
-    "Программирование/Java/JavaBasics/Fundamentals/JIT-компилятора.md",
-    "Программирование/Java/JavaBasics/Fundamentals/JDK.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Equals.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Documentation.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Byte Code Java.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Break.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Таблица методов.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Виртуальная машина Java.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Важные моменты.md",
-    "Программирование/Java/JavaBasics/Generics/Reflection+Generics.md",
-    "Программирование/Java/JavaBasics/Generics/Recusive Generics.md",
-    "Программирование/Java/JavaBasics/Generics/Read&Write <?>.md",
-    "Программирование/Java/JavaBasics/Generics/Generics.md",
-    "Программирование/Java/JavaBasics/Generics/Generic Data Types.md",
-    "pics/Pasted image 20260113215920.png",
-    "pics/Pasted image 20260113204201.png",
-    "pics/Pasted image 20260113133417.png",
-    "Excalidraw",
-    "Configs/Ubuntu",
-    "Configs",
-    "Desktop/Hyprland",
-    "Desktop",
-    "Браузеры/zen",
-    "Браузеры",
-    "Программирование/AI/Нейронки",
+    "Программирование/Сборка/Docker/Dockerfile.md",
+    "Программирование/Сборка/Docker/Docker host OS.md",
+    "Программирование/Сборка/Docker",
+    "Программирование/AI/llama.cpp.md",
+    "Программирование/Сборка",
+    "pics/dashboard.png",
+    "pics/documents.png",
+    "pics/rag_serach.png",
+    "pics/image.png",
+    "Программирование/CICD/CI CD — Полное руководство.md",
+    "Программирование/Databases/Relational/Нормализация.md",
+    "Программирование/CICD",
+    "pics/image-21.png",
+    "Программирование/Databases/Хранение файлов в вебе на стороне сервера.md",
+    "Программирование/Databases/Relational/Денормализация.md",
+    "Программирование/Databases/Relational/sql/JOIN vs \"WHERE с несколькими таблицами\".md",
+    "Программирование/Databases/Relational/sql/SQL.md",
+    "pics/image-20.png",
+    "Программирование/Databases/Relational/sql/schema.md",
+    "Программирование/Git/Merge,rebase.md",
+    "pics/image-19.png",
+    "Программирование/Git/Git flow.md",
+    "pics/image-18.png",
+    "Программирование/Git/База.md",
+    "pics/image-17.png",
+    "Программирование/Git/Origin.md",
+    "Программирование/Git/Без названия",
+    "Программирование/Java/EE/Enterprise Edition.md",
+    "Программирование/Git",
+    "Программирование/Java/EE/Servlets/jsp.md",
+    "Программирование/Java/EE/Servlets/Методы работы с response,request.md",
+    "Программирование/Java/EE/Servlets/Маппинг в web.xml.md",
+    "Программирование/Java/EE/Servlets/Иерархия.md",
+    "pics/image-16.png",
+    "Программирование/Java/EE/Servlets/Жизненный цикл.md",
+    "Программирование/Java/EE/Servlets/Base Servlet example.md",
+    "Программирование/Java/EE/Servlets/Servlet example with hhtp methods overriding.md",
+    "Программирование/Databases/Relational/sql/Триггеры SQL.md",
+    "Программирование/Java/EE/Servlets",
+    "Программирование/Databases/Relational/sql/Процедуры sql.md",
+    "Программирование/Databases/Relational/sql/Функции.md",
+    "Программирование/Java/JavaBasics/Сборка/Maven/Архетипы.md",
+    "Программирование/Java/Spring/Tomcat",
+    "Программирование/Java/EE/Tomcat",
+    "Программирование/Java/Без названия",
+    "Программирование/Java/EE",
     "Untitled.canvas"
   ]
 }
