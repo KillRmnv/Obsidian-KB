@@ -13,15 +13,148 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Игорь/Список к прохождению.md",
+                "file": "Программирование/AI/Нейронки/Сегментация/Основы.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Список к прохождению"
+              "title": "Основы"
+            }
+          },
+          {
+            "id": "d7947a91bed0c550",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Программирование/Java/Hibernate/UserType.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "UserType"
+            }
+          },
+          {
+            "id": "dced0fa6ced93c88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Expression Language.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Expression Language"
+            }
+          },
+          {
+            "id": "1ebd6d21849a7fbe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Java Standart Tag Library.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Java Standart Tag Library"
+            }
+          },
+          {
+            "id": "ea7cc2290cb2d02f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Новая вкладка"
+            }
+          },
+          {
+            "id": "f61976ce49610108",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Новая вкладка"
+            }
+          },
+          {
+            "id": "edb444736ad6b2c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "**Contracting path**.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "**Contracting path**"
+            }
+          },
+          {
+            "id": "0050fe4f3620cac4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Antichamber.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Antichamber"
+            }
+          },
+          {
+            "id": "cca4a6687ccecff0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Игорь/Рецензии/Uncharted.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Uncharted"
+            }
+          },
+          {
+            "id": "6bebb8975c128005",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Watch Dogs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Watch Dogs"
+            }
+          },
+          {
+            "id": "924b3a177a0b84c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Игорь/Рецензии/Battlefield.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Battlefield"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -192,54 +325,54 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6119ab65b1804efa",
+  "active": "d7947a91bed0c550",
   "lastOpenFiles": [
+    "Программирование/Java/Hibernate/Маппинг.md",
+    "Программирование/Java/Hibernate/UserType.md",
+    "Программирование/Java/Hibernate/Config.md",
+    "Программирование/Databases/Relational/sql/orm/jakarta.persistance.md",
+    "Программирование/Java/Hibernate",
+    "Программирование/Java/EE/Servlets/jsp/База.md",
+    "Expression Language.md",
+    "Java Standart Tag Library.md",
+    "image-10.png",
+    "image-9.png",
+    "image-8.png",
+    "image-7.png",
+    "Программирование/Java/EE/Servlets/jsp/jsp.md",
+    "Программирование/Java/EE/Servlets/jsp",
+    "Программирование/Веб/Redirect.md",
+    "image-6.png",
+    "Программирование/Java/EE/Servlets/Sessions.md",
+    "image-5.png",
+    "Программирование/Веб/Сессия и REST.md",
+    "Программирование/Java/EE/Servlets/Работа Cookies.md",
+    "Программирование/Веб/Cookies.md",
+    "Программирование/Веб/Типы Cookies.md",
+    "Программирование/Веб/Зачем Cookies.md",
+    "image-4.png",
+    "**Expanding path**.md",
+    "Программирование/Веб",
+    "image-3.png",
+    "image-2.png",
+    "image-1.png",
+    "Программирование/AI/Нейронки/Сегментация/Основы.md",
+    "**Contracting path**.md",
+    "Игорь/Список к прохождению.md",
+    "Программирование/AI/Нейронки/Сегментация",
+    "Antichamber.md",
+    "Игорь/Рецензии/Uncharted.md",
+    "Watch Dogs.md",
+    "Игорь/Рецензии/Battlefield.md",
     "Программирование/AI/llama.cpp.md",
     "Программирование/AI/Нейронки/архитектура/Сверточные.md",
-    "pics/image-4.png",
-    "pics/image-3.png",
-    "pics/image-5.png",
-    "pics/image-6.png",
-    "pics/image-5.1.png",
-    "pics/image-6.1.png",
-    "pics/image-7.png",
-    "pics/image-8.png",
-    "pics/image-10.png",
-    "pics/image-11.png",
     "Программирование/AI/Нейронки/архитектура/transform.md",
-    "Программирование/AI/Нейронки/архитектура/Планировщик.md",
-    "Программирование/AI/Нейронки/архитектура/Валидационная выборка.md",
-    "Программирование/AI/Нейронки/архитектура/Архитектуры нейросетей.md",
-    "Программирование/Клиент-сервер/RPC/gRPC.md",
-    "Программирование/Клиент-сервер/rest/Rest API.md",
-    "Программирование/Клиент-сервер/GraphQL/Input.md",
-    "Программирование/Клиент-сервер/GraphQL/Fragments.md",
-    "Программирование/Клиент-сервер/GraphQL/GraphQL.md",
-    "Программирование/Запахи и эвристические правила/Избыточный комментарий.md",
-    "Программирование/Запахи и эвристические правила/Запахи и эвристические правила.md",
-    "Программирование/Время/Network Time Protocol.md",
-    "Программирование/Время/Монотонное и календарное время.md",
-    "Программирование/Архитектура/Flux архитектура.md",
-    "Программирование/Архитектура/Чистая архитектура.md",
-    "Программирование/Архитектура/ПОСТРОЕНИЕ-ОПЕРАЦИИ-ПРОВЕРКА.md",
-    "Программирование/Архитектура/ОСОБЫЙ СЛУЧАЙ.md",
-    "Программирование/Архитектура/Микросервисная архитектура.md",
-    "Программирование/Архитектура/Архитектура программных систем.md",
-    "Программирование/Архитектура/Агентно-ориентированная архитектура.md",
-    "Программирование/Архитектура/«Чистая» архитектура.md",
-    "Программирование/Архитектура/Архитектурные шаблоны/Pipe and Filter.md",
-    "Программирование/Архитектура/Архитектурные шаблоны/Multi-Tier Pattern.md",
-    "Программирование/Архитектура/Архитектурные шаблоны/Model View Patterns.md",
     "Программирование/Databases/Relational/sql/Postgres",
     "Программирование/Сборка/Docker Swarm",
     "Программирование/Сборка/Docker",
     "Программирование/Сборка",
     "Программирование/CICD",
     "Программирование/Git/Без названия",
-    "Программирование/Git",
-    "Программирование/Java/EE/Servlets",
-    "Программирование/Java/Spring/Tomcat",
-    "Программирование/Java/EE/Tomcat",
     "Untitled.canvas"
   ]
 }
