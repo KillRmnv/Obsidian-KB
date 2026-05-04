@@ -1,21 +1,70 @@
 [[Программирование/Java/JavaBasics/Fundamentals/Java]]  [[JAR Files]]
-In addition to class files, images, and other resources, each JAR file contains
-a manifest file that describes special features of the archive.
-The manifest file is called MANIFEST.MF and is located in a special META-INF sub-
-directory of the JAR file.
+Манифест JAR‑файла — это специальный текстовый файл `META-INF/MANIFEST.MF` внутри JAR‑архива, содержащий **метаданные** о самом архиве и его содержимом. Он представляет собой набор строк вида `Ключ: Значение`, которыми можно управлять запуском JAR, версиями, зависимостями, подписями и др..labex+3
 
-The manifest entries are
-grouped into sections. The first section in the manifest is called the main sec-
-tion. It applies to the whole JAR file. Subsequent entries can specify properties
-of named entities such as individual files, packages, or URLs. Those entries
-must begin with a Name entry. Sections are separated by blank lines. For
-example:
-Manifest-Version: 1.0
-lines describing this archive
-Name: Woozle.class
-lines describing this file
-Name: com/mycompany/mypkg/
-lines describing this package
-To edit the manifest, place the lines that you want to add to the manifest
-into a text file. Then run
-jar cfm jarFileName manifestFileName . . .
+## Где находится и как выглядит
+
+- Путь внутри JAR: `META-INF/MANIFEST.MF`.urvanov+2
+    
+- Формат — текстовый UTF‑8, каждая строка: `Имя-Атрибута: значение`, разделение секций пустыми строками.for-each+1
+    
+- Если вы не создаёте манифест явно, инструменты (javac/jar, Maven) добавляют **манифест по умолчанию** с минимальным набором полей (обычно `Manifest-Version`, `Created-By`).samag+1
+    
+
+Простейший пример:
+
+text
+
+`Manifest-Version: 1.0 Main-Class: com.example.Main`
+
+## Основные задачи манифеста
+
+1. **Указание точки входа (исполняемый JAR)**  
+    Атрибут `Main-Class` задаёт полностью квалифицированное имя класса с методом `public static void main(String[] args)`.bozza+2  
+    Тогда программу можно запускать как:
+    
+    bash
+    
+    `java -jar app.jar`
+    
+    без явного указания имени класса.
+    
+2. **Указание classpath внутри JAR**  
+    Атрибут `Class-Path` позволяет добавить внешние JAR’ы или директории, которые JVM должна использовать при поиске классов.sobes+2  
+    Пример:
+    
+    text
+    
+    `Class-Path: lib/dependency1.jar lib/dependency2.jar`
+    
+3. **Версионирование и идентификация**  
+    В манифест можно записать информацию о версии приложения, производителя, спецификации:sobes+1
+    
+    - `Implementation-Title`
+        
+    - `Implementation-Version`
+        
+    - `Implementation-Vendor`
+        
+    - `Specification-Version` и др.
+        
+4. **Безопасность и подписи**  
+    Через манифест и связанные файлы в `META-INF` хранятся данные для цифровой подписи JAR и проверки целостности отдельных ресурсов.phys.bspu+1
+    
+5. **Дополнительные служебные атрибуты**  
+    Можно использовать и другие поля (например, `Sealed`, секции `Name: <resource>` для отдельных файлов и пакетов), в зависимости от требований приложения и контейнеров (например, для J2EE, OSGi и т.п.).kgsu+1
+    
+
+## Как создают/подключают манифест
+
+- Через утилиту `jar`:
+    
+    bash
+    
+    `jar cfm app.jar manifest.mf -C out/ .`
+    
+    где `manifest.mf` — ваш файл с атрибутами `Main-Class`, `Class-Path` и др..labex+2
+    
+- Через плагины сборки (например, `maven-jar-plugin`), где нужные атрибуты прописываются в `pom.xml`, а плагин генерирует манифест автоматически.itsobes+1
+    
+
+Если хочешь, могу показать минимальный пример своего `manifest.mf` и команду `jar`, чтобы собрать и запустить простой исполняемый JAR из консоли.

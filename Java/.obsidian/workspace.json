@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "45ea64d51ab138a6",
+        "id": "089a6845812576c7",
         "type": "tabs",
         "children": [
           {
-            "id": "7645af9bcfc455a1",
+            "id": "3f01e6771af53840",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Программирование/Java/Hibernate/Primary key strategies.md",
+                "file": "Программирование/Java/Requirements/Questions v1.0.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Primary key strategies"
+              "title": "Questions v1.0"
+            }
+          },
+          {
+            "id": "49b7f3a4b340c388",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Программирование/Java/JavaBasics/Concurrency/ExecutorService.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ExecutorService"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -142,12 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Программирование/AI/llama.cpp.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура"
+              "title": "Структура llama.cpp"
             }
           },
           {
@@ -192,55 +208,55 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7645af9bcfc455a1",
+  "active": "49b7f3a4b340c388",
   "lastOpenFiles": [
-    "Программирование/Java/Hibernate/Время жизни Session.md",
+    "Программирование/ООП/Ранее, позднее связывание.md",
+    "Программирование/Java/JavaBasics/Concurrency/ExecutorService.md",
+    "Программирование/ООП/Полиморфизм.md",
+    "типы памяти в JVM.md",
+    "Программирование/Java/Requirements/Questions v1.0.md",
+    "Программирование/Java/JavaBasics/Concurrency/Memmory Model.md",
+    "Почему Java является платформонезависимой?.md",
+    "Что делает ключевое слово assert?.md",
+    "Программирование/Java/JavaBasics/Сборка/Manifest.md",
+    "Что происходит в JVM при запуске программы написанной на Java?.md",
+    "Какие модификаторы доступа могут быть у класса?.md",
+    "Программирование/Java/JavaBasics/ООП/Анонимный класс.md",
+    "статический метод быть переопределенным или перегруженным?.md",
+    "статические переменные и методы.md",
+    "Программирование/Java/JavaBasics/collections/Comparable,Comparator.md",
+    "Программирование/Java/JavaBasics/collections/Comparator.md",
+    "Программирование/Java/JavaBasics/collections/Comparable,HashMap.md",
+    "Программирование/Java/JavaBasics/collections/Суррогатные коллекции.md",
     "Программирование/Java/Hibernate/Primary key strategies.md",
-    "Программирование/Java/Hibernate/Cache.md",
+    "Программирование/Java/JavaBasics/Generics/Generics.md",
+    "Программирование/ООП/Инвариантность.md",
+    "Программирование/Java/JavaBasics/темы.md",
+    "Новые фичи (Java 8–21).md",
+    "Рефлексия и аннотации.md",
+    "Программирование/Apache Kafka/Кластер.md",
+    "I/O.md",
+    "I",
+    "Программирование/Java/Spring/Caching",
+    "Программирование/Java/Spring/Exceptions",
+    "Программирование/Java/Spring/mapping",
+    "Программирование/Java/Spring/properties",
+    "Программирование/Databases/Кэширование",
+    "image-17.png",
     "Программирование/Java/Hibernate/Без названия",
-    "Программирование/Java/Hibernate/UserType.md",
-    "Программирование/Java/Hibernate/JPA.md",
-    "Программирование/Java/Hibernate/Entity Lifecycle.md",
-    "Программирование/Java/Hibernate/Entity Persister.md",
-    "Программирование/Java/Hibernate/Flash,Commit.md",
-    "Программирование/Java/Hibernate/Маппинг.md",
-    "Программирование/Java/Логгирование/Адаптер.md",
     "Без названия.canvas",
-    "Программирование/Java/Логгирование/Конфигурация.md",
     "image-16.png",
-    "Программирование/Java/Логгирование/Уровни логгирования.md",
     "image-15.png",
     "Программирование/Java/Логгирование/Без названия",
     "Программирование/Java/Логгирование",
     "image-14.png",
-    "Программирование/Java/Hibernate/Отслеживание изменений объекта.md",
-    "Программирование/Databases/Relational/ACID.md",
-    "Программирование/Databases/Relational/sql/SQL транзакции.md",
-    "Программирование/Databases/Relational/sql/Процедуры sql.md",
     "image-13.png",
     "image-12.png",
     "image-11.png",
-    "Программирование/Java/Hibernate/Config.md",
-    "Программирование/Databases/Relational/sql/orm/jakarta.persistance.md",
     "Программирование/Java/Hibernate",
-    "Программирование/Java/EE/Servlets/jsp/База.md",
-    "Expression Language.md",
-    "Java Standart Tag Library.md",
     "image-10.png",
     "image-9.png",
     "image-8.png",
-    "image-7.png",
-    "Программирование/Java/EE/Servlets/jsp/jsp.md",
-    "Программирование/Java/EE/Servlets/jsp",
-    "Программирование/Веб/Redirect.md",
-    "Программирование/Java/EE/Servlets/Sessions.md",
-    "Программирование/Веб/Сессия и REST.md",
-    "Программирование/Java/EE/Servlets/Работа Cookies.md",
-    "Программирование/Веб",
-    "Программирование/AI/Нейронки/Сегментация",
-    "Программирование/Databases/Relational/sql/Postgres",
-    "Программирование/Сборка/Docker Swarm",
-    "Программирование/Сборка/Docker",
     "Untitled.canvas"
   ]
 }
