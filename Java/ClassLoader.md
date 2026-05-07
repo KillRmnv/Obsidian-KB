@@ -76,7 +76,7 @@
 
 
 
-```
+```java
 import java.io.*;
 import java.nio.file.*;
 
@@ -111,7 +111,7 @@ public class MyCustomLoader extends ClassLoader {
 
 Java
 
-```
+```java
 public class LoaderDemo {
     public static void main(String[] args) {
         try {

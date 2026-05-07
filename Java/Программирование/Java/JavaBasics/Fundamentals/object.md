@@ -54,6 +54,18 @@ public boolean equals(Object o) {
 ```
 
 **Контракт:** рефлексивность, симметричность, транзитивность, консистентность, non-null.
+Более строгий вариант с getClass()
+```java
+@Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false; // строгая проверка класса
+
+    Person person = (Person) o;
+    return age == person.age &&
+           Objects.equals(name, person.name);
+}
+```
 
 ---
 
