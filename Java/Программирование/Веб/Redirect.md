@@ -1,1 +1,1 @@
-![[image-6.png]]
+![[Программирование/Java/EE/Servlets/image-6.png]]

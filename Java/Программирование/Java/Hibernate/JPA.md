@@ -1,1 +1,1 @@
-![[image-14.png]]
+![[Программирование/Java/Hibernate/image-14.png]]

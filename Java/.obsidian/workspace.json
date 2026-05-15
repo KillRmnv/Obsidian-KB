@@ -4,305 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "089a6845812576c7",
+        "id": "f896041004f95636",
         "type": "tabs",
         "children": [
           {
-            "id": "3f01e6771af53840",
+            "id": "a18f554a89c87f5f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Новые фичи (Java 8–21).md",
+                "file": "ИАД/naive_bayes_task.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Новые фичи (Java 8–21)"
-            }
-          },
-          {
-            "id": "49b7f3a4b340c388",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Collections Framework.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Collections Framework"
-            }
-          },
-          {
-            "id": "fe341fd215a8c6d0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ООП  шпаргалка.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ООП  шпаргалка"
-            }
-          },
-          {
-            "id": "d74237bcd824de59",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Память и JVM.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Память и JVM"
-            }
-          },
-          {
-            "id": "e57e593151d4cab7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ClassLoader.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ClassLoader"
-            }
-          },
-          {
-            "id": "79d30cea703c4340",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Java/EE/Servlets/Жизненный цикл.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Жизненный цикл"
-            }
-          },
-          {
-            "id": "ddfda6d3295b8a25",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Java/JavaBasics/темы.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "темы"
-            }
-          },
-          {
-            "id": "9f3fba7e02c49d0b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Контейнер, контексты и скоупы.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Контейнер, контексты и скоупы"
-            }
-          },
-          {
-            "id": "0bcd520acd6d2a64",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "IoC и DI.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "IoC и DI"
-            }
-          },
-          {
-            "id": "766d2e53edc754a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Java/EE/Servlets/Методы работы с response,request.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Методы работы с response,request"
-            }
-          },
-          {
-            "id": "4d5533ef0579a217",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Потокобезопасность и shared state.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Потокобезопасность и shared state"
-            }
-          },
-          {
-            "id": "38e66db1ddd9bc2f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Listeners.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Listeners"
-            }
-          },
-          {
-            "id": "4f0413baf9281f66",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Java/EE/Servlets/Жизненный цикл.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Жизненный цикл"
-            }
-          },
-          {
-            "id": "8733571db8e36768",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Сессии и состояние.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Сессии и состояние"
-            }
-          },
-          {
-            "id": "23c4fe5114e67c55",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ServletConfig и ServletContext.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ServletConfig и ServletContext"
-            }
-          },
-          {
-            "id": "264f5438914ad9da",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HttpServletRequest / HttpServletResponse.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HttpServletResponse"
-            }
-          },
-          {
-            "id": "b8f25366fdef9b41",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Жизненный цикл сервлета.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Жизненный цикл сервлета"
-            }
-          },
-          {
-            "id": "f9b0e164f96ff62d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Базовое о сервлетах и контейнере.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Базовое о сервлетах и контейнере"
-            }
-          },
-          {
-            "id": "41a160dc930b7b55",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Java/JavaBasics/Сборка/Package.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Package"
-            }
-          },
-          {
-            "id": "ffb95c4375875855",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Java/JavaBasics/Fundamentals/object.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "object"
-            }
-          },
-          {
-            "id": "e812f5901c4ebba2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Принципы/SOLID/SOLID.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SOLID"
+              "title": "naive_bayes_task"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -474,55 +193,55 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ddfda6d3295b8a25",
+  "active": "a18f554a89c87f5f",
   "lastOpenFiles": [
-    "Программирование/Java/Spring/темы.md",
-    "Программирование/Принципы/SOLID/SOLID.md",
-    "Программирование/Принципы/SOLID/Примеры нарушений SOLID принципов на Java.md",
-    "Программирование/Java/Requirements/Без названия.md",
-    "Программирование/Java/Requirements/моменты.md",
-    "Программирование/Java/EE/Servlets/Методы работы с response,request.md",
-    "Программирование/Java/EE/Servlets/Servlet example with hhtp methods overriding.md",
-    "Программирование/Java/EE/Servlets/Base Servlet example.md",
-    "Программирование/Клиент-сервер/RPC/gRPC.md",
-    "Программирование/Клиент-сервер/rest/Rest API.md",
-    "Программирование/Веб/Сессия и REST.md",
-    "Программирование/Java/EE/Servlets/Маппинг в web.xml.md",
-    "Программирование/Java/EE/Servlets/Иерархия.md",
-    "Программирование/Java/EE/Servlets/Sessions.md",
-    "Программирование/Java/EE/темы.md",
-    "Новые фичи (Java 8–21).md",
-    "Программирование/Java/JavaBasics/темы.md",
-    "Рефлексия и аннотации.md",
-    "Память и JVM.md",
-    "Многопоточность (Concurrency).md",
-    "Функциональное программирование (Java 8+).md",
-    "ООП  шпаргалка.md",
-    "Программирование/Java/Requirements/Questions v1.0.md",
-    "IoC и DI.md",
-    "Контейнер, контексты и скоупы.md",
-    "Потокобезопасность и shared state.md",
+    "ИАД/kohonen_task.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Новые фичи (Java 8–21).md",
+    "Программирование/Java/JavaBasics/Fundamentals/Run-Time Data Areas.md",
+    "Программирование/Java/JavaBasics/Fundamentals/image-18.png",
+    "Программирование/Java/JavaBasics/Fundamentals/image-20.png",
+    "Программирование/Java/JavaBasics/Fundamentals/image-19.png",
+    "Программирование/Java/JavaBasics/Fundamentals/Память и JVM.md",
+    "Программирование/Databases/Relational/image-17.png",
+    "Программирование/Java/Hibernate/image-14.png",
+    "Sources/IMG_20250720_152436.jpg",
+    "Программирование/Java/Логгирование/image-16.png",
+    "Программирование/Java/Логгирование/image-15.png",
+    "Программирование/Java/EE/Servlets/image-4.png",
+    "Программирование/Java/EE/Servlets/image-13.png",
+    "Программирование/Java/JavaBasics/ООП/transient.md",
+    "Программирование/Java/JavaBasics/Fundamentals/ReferenceQueue.md",
+    "Программирование/Java/JavaBasics/Fundamentals/POJO.md",
+    "Программирование/Java/JavaBasics/Fundamentals/PhantomReference.md",
+    "Программирование/Java/JavaBasics/ООП/hashCode() и equals().md",
+    "Программирование/Java/JavaBasics/Fundamentals/ClassLoader.md",
+    "Программирование/Java/JavaBasics/Functional/FunctionalInterface.md",
+    "Программирование/Java/EE/Servlets/jsp/Expression Language.md",
+    "Программирование/Java/JavaBasics/Concurrency/Atomic types.md",
+    "Программирование/API.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Что происходит в JVM при запуске программы написанной на Java?.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Что делает ключевое слово assert?.md",
+    "Программирование/Java/JavaBasics/Functional/Функциональное программирование (Java 8+).md",
+    "Программирование/Java/JavaBasics/Fundamentals/типы памяти в JVM.md",
+    "Программирование/Java/JavaBasics/ООП/статический метод быть переопределенным или перегруженным?.md",
+    "Программирование/Java/JavaBasics/ООП/статические переменные и методы.md",
+    "Программирование/Java/JavaBasics/Reflection/Рефлексия и аннотации.md",
+    "Программирование/Java/JavaBasics/Fundamentals/разница между статической и динамической загрузкой классов.md",
+    "Программирование/Java/JavaBasics/Fundamentals/Почему Java является платформонезависимой?.md",
+    "Программирование/Java/JavaBasics/Concurrency/Потокобезопасность и shared state.md",
+    "Программирование/Java/JavaBasics/ООП/ковариантность типов.md",
+    "Программирование/Java/JavaBasics/ООП/Какие модификаторы доступа могут быть у класса?.md",
+    "Без названия.canvas",
+    "ИАД",
     "Конфигурация",
     "HttpServletRequest ",
     "Программирование/Python/Untitled.base",
-    "image-20.png",
-    "image-19.png",
-    "image-18.png",
     "I",
     "Программирование/Java/Spring/Caching",
     "Программирование/Java/Spring/Exceptions",
     "Программирование/Java/Spring/mapping",
     "Программирование/Java/Spring/properties",
     "Программирование/Databases/Кэширование",
-    "image-17.png",
-    "Программирование/Java/Hibernate/Без названия",
-    "Без названия.canvas",
-    "image-16.png",
-    "image-15.png",
-    "image-14.png",
-    "image-13.png",
-    "image-12.png",
-    "image-11.png",
     "Untitled.canvas"
   ]
 }

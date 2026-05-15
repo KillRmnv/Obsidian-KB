@@ -1,4 +1,4 @@
-![[image-19.png]]
+![[Программирование/Java/JavaBasics/Fundamentals/image-19.png]]
 ## 
 Git Rebase и Git Merge — Полное руководство
 
