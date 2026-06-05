@@ -1,1 +1,1 @@
-![[image 1.png]]
+![[pics/image 1.png]]

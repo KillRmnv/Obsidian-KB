@@ -4,24 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "f896041004f95636",
+        "id": "a33d75f77035debb",
         "type": "tabs",
         "children": [
           {
-            "id": "a18f554a89c87f5f",
+            "id": "60d47fedbe6a33d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ИАД/naive_bayes_task.md",
+                "file": "Программирование/Java/Spring/Realization/Классическая модель Servlet (Tomcat, Jetty).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "naive_bayes_task"
+              "title": "Классическая модель Servlet (Tomcat, Jetty)"
+            }
+          },
+          {
+            "id": "409fa057387fc488",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Программирование/Java/Spring/annotations/@Qulifier.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@Qulifier"
+            }
+          },
+          {
+            "id": "471b75fc3dee1d54",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Игорь/Игры чтобы поиграть.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Игры чтобы поиграть"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,44 +222,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a18f554a89c87f5f",
+  "active": "409fa057387fc488",
   "lastOpenFiles": [
-    "ИАД/kohonen_task.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Новые фичи (Java 8–21).md",
-    "Программирование/Java/JavaBasics/Fundamentals/Run-Time Data Areas.md",
-    "Программирование/Java/JavaBasics/Fundamentals/image-18.png",
-    "Программирование/Java/JavaBasics/Fundamentals/image-20.png",
-    "Программирование/Java/JavaBasics/Fundamentals/image-19.png",
-    "Программирование/Java/JavaBasics/Fundamentals/Память и JVM.md",
-    "Программирование/Databases/Relational/image-17.png",
-    "Программирование/Java/Hibernate/image-14.png",
-    "Sources/IMG_20250720_152436.jpg",
-    "Программирование/Java/Логгирование/image-16.png",
-    "Программирование/Java/Логгирование/image-15.png",
-    "Программирование/Java/EE/Servlets/image-4.png",
-    "Программирование/Java/EE/Servlets/image-13.png",
-    "Программирование/Java/JavaBasics/ООП/transient.md",
-    "Программирование/Java/JavaBasics/Fundamentals/ReferenceQueue.md",
-    "Программирование/Java/JavaBasics/Fundamentals/POJO.md",
-    "Программирование/Java/JavaBasics/Fundamentals/PhantomReference.md",
-    "Программирование/Java/JavaBasics/ООП/hashCode() и equals().md",
-    "Программирование/Java/JavaBasics/Fundamentals/ClassLoader.md",
-    "Программирование/Java/JavaBasics/Functional/FunctionalInterface.md",
-    "Программирование/Java/EE/Servlets/jsp/Expression Language.md",
-    "Программирование/Java/JavaBasics/Concurrency/Atomic types.md",
-    "Программирование/API.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Что происходит в JVM при запуске программы написанной на Java?.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Что делает ключевое слово assert?.md",
-    "Программирование/Java/JavaBasics/Functional/Функциональное программирование (Java 8+).md",
-    "Программирование/Java/JavaBasics/Fundamentals/типы памяти в JVM.md",
-    "Программирование/Java/JavaBasics/ООП/статический метод быть переопределенным или перегруженным?.md",
-    "Программирование/Java/JavaBasics/ООП/статические переменные и методы.md",
-    "Программирование/Java/JavaBasics/Reflection/Рефлексия и аннотации.md",
-    "Программирование/Java/JavaBasics/Fundamentals/разница между статической и динамической загрузкой классов.md",
-    "Программирование/Java/JavaBasics/Fundamentals/Почему Java является платформонезависимой?.md",
-    "Программирование/Java/JavaBasics/Concurrency/Потокобезопасность и shared state.md",
-    "Программирование/Java/JavaBasics/ООП/ковариантность типов.md",
-    "Программирование/Java/JavaBasics/ООП/Какие модификаторы доступа могут быть у класса?.md",
+    "Программирование/Java/Spring/annotations/@Autowired.md",
+    "Программирование/Java/Spring/моменты.md",
+    "Программирование/Databases/NonRelational/Примеры СУБД.md",
+    "Программирование/Databases/Relational/СУБД.md",
+    "Программирование/Databases/NonRelational/Выбор NoSQL-решения_ Архитектурный анализ моделей хранения и соответствующих сценариев применения.pdf",
+    "Программирование/Java/Hibernate/JPA.md",
+    "Программирование/Java/Spring/Realization/Асинхронная модель (Reactive, Spring WebFlux).md",
+    "Программирование/Java/Spring/annotations/@Async.md",
+    "Программирование/Java/Spring/Realization/Классическая модель Servlet (Tomcat, Jetty).md",
+    "Программирование/Java/Spring/Контейнер, контексты и скоупы.md",
+    "Программирование/Java/Spring/Устройство Spring Web.md",
+    "image-8.png",
+    "Игорь/Игры чтобы поиграть.md",
+    "Программирование/Java/Spring/Application context.md",
+    "Программирование/Java/Spring/темы.md",
+    "Программирование/Java/Spring/Scope в Spring.md",
+    "Игорь/Рецензии/Antichamber.md",
+    "Wolfenstein.md",
+    "Игорь/Рецензии/The talos principle.md",
+    "Игорь/Рецензии/Deep Rock Galactic.md",
+    "Игорь/Рецензии/R6.md",
+    "Игорь/Рецензии/The Finals.md",
+    "Игорь/Рецензии/Watch Dogs.md",
+    "image-7.png",
+    "image-6.png",
+    "image-4.png",
+    "image-2.png",
+    "image-1.png",
+    "image.png",
+    "Loop hero.md",
+    "Программирование/Java/Requirements/моменты.md",
+    "Программирование/Java/JavaBasics/collections/Listiterator.md",
+    "Программирование/Java/JavaBasics/collections/Collections Framework.md",
+    "Программирование/Java/JavaBasics/collections/методы интерфейса Collection.md",
+    "image-5.png",
+    "image-3.png",
+    "Программирование/Java/JavaBasics/Concurrency/image 2.png",
     "Без названия.canvas",
     "ИАД",
     "Конфигурация",
@@ -241,7 +271,6 @@
     "Программирование/Java/Spring/Exceptions",
     "Программирование/Java/Spring/mapping",
     "Программирование/Java/Spring/properties",
-    "Программирование/Databases/Кэширование",
     "Untitled.canvas"
   ]
 }

@@ -1,0 +1,1 @@
+![[Программирование/Java/JavaBasics/Concurrency/image.png]]
