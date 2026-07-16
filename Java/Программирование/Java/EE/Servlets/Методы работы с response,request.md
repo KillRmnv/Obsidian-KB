@@ -50,15 +50,17 @@ while ((line = reader.readLine()) != null) {
 
 ### 4. Специфические HTTP-методы
 
-| Метод | Назначение |
-| :--- | :--- |
-| `String getMethod()` | Вернет строку: `"GET"`, `"POST"`, `"PUT"`, `"DELETE"` и т.д. |
-| `String getRequestURI()` | Путь внутри приложения (например, `/app/user/123`). |
-| `StringBuffer getRequestURL()` | Полный URL (с протоколом, доменом и портом). |
-| `String getQueryString()` | Всё, что идет после `?` в URL. |
-| `String getRemoteAddr()` | IP-адрес клиента. |
-| `String getRemoteHost()` | Имя хоста клиента. |
-| `String getRemoteUser()` | Имя пользователя, если была аутентификация. |
+| Метод                          | Назначение                                                   |
+| :----------------------------- | :----------------------------------------------------------- |
+| `String getMethod()`           | Вернет строку: `"GET"`, `"POST"`, `"PUT"`, `"DELETE"` и т.д. |
+| `String getRequestURI()`       | Путь внутри приложения (например, `/app/user/123`).          |
+| `StringBuffer getRequestURL()` | Полный URL (с протоколом, доменом и портом).                 |
+| `String getQueryString()`      | Всё, что идет после `?` в URL.                               |
+| `String getRemoteAddr()`       | IP-адрес клиента.                                            |
+| `String getRemoteHost()`       | Имя хоста клиента.                                           |
+| `String getRemoteUser()`       | Имя пользователя, если была аутентификация.                  |
+|                                |                                                              |
+|                                |                                                              |
 
 ### 5. Работа с куками (Cookies)
 

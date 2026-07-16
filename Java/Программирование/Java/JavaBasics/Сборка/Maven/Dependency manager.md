@@ -1,1 +1,1 @@
-![[Программирование/Java/EE/Servlets/image-10.png]]
+![[dependency manager.png]]

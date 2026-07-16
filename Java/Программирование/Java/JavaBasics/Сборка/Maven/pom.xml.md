@@ -1,1 +1,1 @@
-![[Программирование/Java/EE/Servlets/image-8.png]]
+![[maven.png]]

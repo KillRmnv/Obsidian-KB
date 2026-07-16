@@ -1,1 +1,1 @@
-![[Программирование/Java/EE/Servlets/image-9.png]]
+![[dependency scope.png]]
