@@ -142,7 +142,7 @@ public class СервисЗаказов {
 }
 ```
 
-### ✅ Рекомендуемый способ — через конструктор:
+###  Рекомендуемый способ — через конструктор:
 
 ```java
 import org.springframework.stereotype.Service;

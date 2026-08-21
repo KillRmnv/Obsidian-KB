@@ -1,4 +1,4 @@
-## 🚪 Что такое `HandlerInterceptor`
+##  Что такое `HandlerInterceptor`
 
 `HandlerInterceptor` — это интерфейс, который позволяет **перехватывать и обрабатывать входящие HTTP-запросы** на уровне **Spring MVC** до, после или вокруг выполнения контроллера.
 
@@ -8,11 +8,11 @@
 
 ---
 
-## 🧱 Интерфейс
+##  Интерфейс
 
 `public interface HandlerInterceptor {     default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {         return true;     }      default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,                             @Nullable ModelAndView modelAndView) throws Exception {     }      default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,                                  @Nullable Exception ex) throws Exception {     } }`
 
-### 🔹 1. `preHandle(...)`
+###  1. `preHandle(...)`
 
 - Вызывается **перед** вызовом метода контроллера.
     
@@ -27,7 +27,7 @@
     - проверку CORS, параметров и т.д.
         
 
-### 🔹 2. `postHandle(...)`
+###  2. `postHandle(...)`
 
 - Вызывается **после** контроллера, но **до рендера View** (или до отправки JSON).
     
@@ -36,7 +36,7 @@
 - Используется для добавления данных в ответ, логов и т.п.
     
 
-### 🔹 3. `afterCompletion(...)`
+###  3. `afterCompletion(...)`
 
 - Вызывается **после завершения запроса**, даже если была ошибка.
     
@@ -51,13 +51,13 @@
 
 ---
 
-## ✅ Пример: логирование всех запросов
+##  Пример: логирование всех запросов
 
-`import jakarta.servlet.http.HttpServletRequest; import jakarta.servlet.http.HttpServletResponse; import org.springframework.web.servlet.HandlerInterceptor; import org.springframework.stereotype.Component;  @Component public class LoggingInterceptor implements HandlerInterceptor {      @Override     public boolean preHandle(HttpServletRequest request,                              HttpServletResponse response,                              Object handler) {          System.out.println("➡️ Request: " + request.getMethod() + " " + request.getRequestURI());         return true; // продолжаем выполнение     }      @Override     public void afterCompletion(HttpServletRequest request,                                 HttpServletResponse response,                                 Object handler,                                 Exception ex) {         System.out.println("⬅️ Response: " + response.getStatus());     } }`
+`import jakarta.servlet.http.HttpServletRequest; import jakarta.servlet.http.HttpServletResponse; import org.springframework.web.servlet.HandlerInterceptor; import org.springframework.stereotype.Component;  @Component public class LoggingInterceptor implements HandlerInterceptor {      @Override     public boolean preHandle(HttpServletRequest request,                              HttpServletResponse response,                              Object handler) {          System.out.println(" Request: " + request.getMethod() + " " + request.getRequestURI());         return true; // продолжаем выполнение     }      @Override     public void afterCompletion(HttpServletRequest request,                                 HttpServletResponse response,                                 Object handler,                                 Exception ex) {         System.out.println(" Response: " + response.getStatus());     } }`
 
 ---
 
-## ⚙️ Регистрируем перехватчик
+##  Регистрируем перехватчик
 
 Интерцепторы регистрируются в **WebMvcConfigurer**:
 
@@ -65,13 +65,13 @@
 
 ---
 
-## 🧩 Пример: проверка API-ключа в заголовке
+##  Пример: проверка API-ключа в заголовке
 
 `@Component public class ApiKeyInterceptor implements HandlerInterceptor {      @Value("${api.key}")     private String expectedKey;      @Override     public boolean preHandle(HttpServletRequest request,                              HttpServletResponse response,                              Object handler) throws IOException {         String key = request.getHeader("X-API-KEY");         if (!expectedKey.equals(key)) {             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);             response.getWriter().write("Invalid API key");             return false; // прервать выполнение         }         return true;     } }`
 
 ---
 
-## 🧭 Цепочка вызовов
+##  Цепочка вызовов
 
 Если несколько интерцепторов:
 
@@ -79,24 +79,24 @@
 
 ---
 
-## 🧰 HandlerInterceptor vs Filter
+##  HandlerInterceptor vs Filter
 
 |Критерий|`HandlerInterceptor`|`Filter`|
 |---|---|---|
 |Уровень|Spring MVC|Servlet API|
 |Контекст|Только Spring контроллеры|Все запросы (включая статические ресурсы)|
 |Использует|`HandlerMethod`|`ServletRequest` / `ServletResponse`|
-|Легче интегрировать с Spring|✅ Да|⚙️ Нужно больше кода|
+|Легче интегрировать с Spring| Да| Нужно больше кода|
 |Для чего лучше|Авторизация, логирование, метрики|Кэш, CORS, gzip, raw доступ|
 
 ---
 
-## 💡 Применение в реальных проектах
+##  Применение в реальных проектах
 
 |Сценарий|Что делает `HandlerInterceptor`|
 |---|---|
-|🔐 Проверка токена|Проверяет JWT перед каждым запросом|
-|🧭 Логирование|Логирует метод, URL, время, статус|
-|⏱️ Метрики|Измеряет время выполнения|
-|🧹 Очистка контекста|После завершения запроса очищает ThreadLocal|
-|🧾 Добавление заголовков|Добавляет кастомные headers в ответ|
+| Проверка токена|Проверяет JWT перед каждым запросом|
+| Логирование|Логирует метод, URL, время, статус|
+| Метрики|Измеряет время выполнения|
+| Очистка контекста|После завершения запроса очищает ThreadLocal|
+| Добавление заголовков|Добавляет кастомные headers в ответ|

@@ -8,7 +8,7 @@ signalAll() говорит остальным тредам на await() прос
 
 Вот классический, но **максимально показательный пример**: ограниченный буфер задач (Producer-Consumer). Он наглядно демонстрирует, как работают `while`, `await()` и `signal()`, и почему `Condition` эффективнее старых `wait()/notify()`.
 
-### 📦 Код: `BoundedTaskQueue`
+###  Код: `BoundedTaskQueue`
 ```java
 import java.util.LinkedList;
 import java.util.Queue;
@@ -60,14 +60,14 @@ public class BoundedTaskQueue {
 
 ---
 
-### 🔍 Пошаговый разбор: "что да как"
+###  Пошаговый разбор: "что да как"
 
 #### Сценарий: Очередь заполнена, приходит `put()`, затем `take()`
 1. `Thread-Producer` вызывает `put("A")`. Queue полна (`size == capacity`).
 2. Заходит в `while (queue.size() == capacity)` → условие `true`.
 3. Вызывает `notFull.await()`:
-   - ⚡ **Атомарно отпускает `lock`** (другие потоки могут войти).
-   - 🛌 Поток переходит в состояние `WAITING` и помещается в очередь `notFull`.
+   -  **Атомарно отпускает `lock`** (другие потоки могут войти).
+   -  Поток переходит в состояние `WAITING` и помещается в очередь `notFull`.
 4. `Thread-Consumer` вызывает `take()`:
    - Захватывает `lock` (он свободен).
    - `queue` не пуст → `while` ложно → пропускается.
@@ -80,13 +80,13 @@ public class BoundedTaskQueue {
 
 ---
 
-### ⚠️ Почему именно `while`, а не `if`?
+###  Почему именно `while`, а не `if`?
 Замените мысленно `while` на `if` и представьте многопоточный сценарий:
 ```java
-if (queue.isEmpty()) { // ❌ ПЛОХО
+if (queue.isEmpty()) { //  ПЛОХО
     notEmpty.await();
 }
-String task = queue.poll(); // 💥 NPE или NoSuchElementException!
+String task = queue.poll(); //  NPE или NoSuchElementException!
 ```
 **Что сломается:**
 1. **Ложные пробуждения** (spurious wakeup): JVM может разбудить поток без `signal()`. `if` пропустит проверку → `poll()` на пустой очереди.
@@ -95,7 +95,7 @@ String task = queue.poll(); // 💥 NPE или NoSuchElementException!
 
 ---
 
-### 🆚 В чём выигрыш `Condition` перед `wait()/notify()`?
+###  В чём выигрыш `Condition` перед `wait()/notify()`?
 | Ситуация | `wait()/notify()` | `Condition.await()/signal()` |
 |----------|-------------------|------------------------------|
 | Все потоки (P и C) ждут на `this` | `notify()` будит **случайный** поток. Может разбудить производителя, когда очередь пуста → он проверит `while`, не пройдёт и снова уснёт. Лишнее переключение контекста. | `notEmpty.signal()` будит **только** тех, кто ждал именно на `notEmpty`. Точное попадание. |
@@ -106,7 +106,7 @@ String task = queue.poll(); // 💥 NPE или NoSuchElementException!
 
 ---
 
-### 💡 Как это используется в Java SDK?
+###  Как это используется в Java SDK?
 Именно так реализованы под капотом:
 - `ArrayBlockingQueue`, `LinkedBlockingQueue`
 - `ReentrantLock` (его `await()/signal()` внутри используют `Condition`)

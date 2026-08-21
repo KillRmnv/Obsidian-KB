@@ -34,7 +34,7 @@ Animal animal = dog;  // Неявный upcast
 Animal animal = new Dog();
 Dog dog = (Dog) animal;  // Явный downcast
 
-// ❌ Опасно:
+//  Опасно:
 Animal animal = new Cat();
 Dog dog = (Dog) animal;  // ClassCastException!
 ```
@@ -59,7 +59,7 @@ public class Dog extends Animal { }
 public class Cat extends Animal { }
 
 Animal animal = new Cat();  // Создали кошку
-Dog dog = (Dog) animal;     // ❌ ClassCastException! Это не собака!
+Dog dog = (Dog) animal;     //  ClassCastException! Это не собака!
 ```
 
 #### 2. Приведение несовместимых классов
@@ -70,7 +70,7 @@ Copy
 
 ```java
 String text = "Hello";
-Integer num = (Integer) text;  // ❌ ClassCastException! Нет связи наследования
+Integer num = (Integer) text;  //  ClassCastException! Нет связи наследования
 ```
 
 #### 3. Raw types и generics
@@ -85,7 +85,7 @@ rawList.add("string");
 rawList.add(123);
 
 for (Object obj : rawList) {
-    String s = (String) obj;  // ❌ ClassCastException на второй итерации!
+    String s = (String) obj;  //  ClassCastException на второй итерации!
 }
 ```
 
@@ -98,10 +98,10 @@ Copy
 ```java
 Object[] objects = new String[10];
 objects[0] = "text";
-objects[1] = 123;  // ❌ ArrayStoreException (родственная проблема)
+objects[1] = 123;  //  ArrayStoreException (родственная проблема)
 
 Object obj = objects;
-Integer[] ints = (Integer[]) obj;  // ❌ ClassCastException!
+Integer[] ints = (Integer[]) obj;  //  ClassCastException!
 ```
 
 #### 5. Проблемы с generics (type erasure)
@@ -116,9 +116,9 @@ intList.add(42);
 
 // Type erasure: в runtime List<Integer> = List
 Object obj = intList;
-List<String> strList = (List<String>) obj;  // ⚠️ Предупреждение, но компилируется
+List<String> strList = (List<String>) obj;  //  Предупреждение, но компилируется
 
-for (String s : strList) {  // ❌ ClassCastException! Integer не String
+for (String s : strList) {  //  ClassCastException! Integer не String
     System.out.println(s);
 }
 ```
@@ -135,10 +135,10 @@ Copy
 public void process(Animal animal) {
     // Проверка перед casting'ом
     if (animal instanceof Dog) {
-        Dog dog = (Dog) animal;  // ✅ Безопасно
+        Dog dog = (Dog) animal;  //  Безопасно
         dog.bark();
     } else if (animal instanceof Cat) {
-        Cat cat = (Cat) animal;  // ✅ Безопасно
+        Cat cat = (Cat) animal;  //  Безопасно
         cat.meow();
     }
 }

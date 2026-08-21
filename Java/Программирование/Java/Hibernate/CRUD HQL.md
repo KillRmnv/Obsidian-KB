@@ -1,5 +1,5 @@
 
-## 🏗️ Подготовка: Сущность и Репозиторий
+##  Подготовка: Сущность и Репозиторий
 
 ```java
 @Entity
@@ -28,20 +28,20 @@ public class Employee {
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     
-    // ✅ Derived Query (автоматическая генерация)
+    //  Derived Query (автоматическая генерация)
     Optional<Employee> findByEmail(String email);
     List<Employee> findByDepartmentName(String deptName);
     boolean existsByEmail(String email);
     
-    // ✅ @Query (кастомный HQL/JPQL)
+    //  @Query (кастомный HQL/JPQL)
     @Query("SELECT e FROM Employee e JOIN FETCH e.department WHERE e.id = :id")
     Optional<Employee> findWithDepartment(@Param("id") Long id);
     
-    // ✅ Projection (DTO)
+    //  Projection (DTO)
     @Query("SELECT new com.example.dto.EmployeeDTO(e.id, e.name, e.salary) FROM Employee e WHERE e.department.id = :deptId")
     List<EmployeeDTO> findDTOsByDepartment(@Param("deptId") Long deptId);
     
-    // ✅ Модифицирующий запрос
+    //  Модифицирующий запрос
     @Modifying
     @Transactional
     @Query("UPDATE Employee e SET e.salary = e.salary * :factor WHERE e.department.id = :deptId")
@@ -51,9 +51,9 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 ---
 
-## 1️⃣ CREATE (Создание)
+## 1 CREATE (Создание)
 
-### ✅ Лучший подход: `save()`
+###  Лучший подход: `save()`
 ```java
 @Service
 @Transactional
@@ -80,20 +80,20 @@ public class EmployeeService {
 - Транзакция гарантирует атомарность
 - Валидация предотвращает нарушение уникальных ограничений
 
-### ⚠️ Ошибки
+###  Ошибки
 ```java
-// ❌ Ручной persist без транзакции
+//  Ручной persist без транзакции
 em.persist(employee); // не сохранится в БД без @Transactional
 
-// ❌ Игнорирование исключений
+//  Игнорирование исключений
 repo.save(employee); // может выбросить DataIntegrityViolationException
 ```
 
 ---
 
-## 2️⃣ READ (Чтение)
+## 2 READ (Чтение)
 
-### ✅ Вариант 1: По ID (с ленивой загрузкой связей)
+###  Вариант 1: По ID (с ленивой загрузкой связей)
 ```java
 public Employee getById(Long id) {
     return repo.findById(id)
@@ -101,7 +101,7 @@ public Employee getById(Long id) {
 }
 ```
 
-### ✅ Вариант 2: С подгруженными связями (избегаем N+1)
+###  Вариант 2: С подгруженными связями (избегаем N+1)
 ```java
 // В репозитории
 @Query("SELECT e FROM Employee e JOIN FETCH e.department WHERE e.id = :id")
@@ -114,7 +114,7 @@ public Employee getWithDepartment(Long id) {
 }
 ```
 
-### ✅ Вариант 3: Пагинация + Сортировка
+###  Вариант 3: Пагинация + Сортировка
 ```java
 // В репозитории
 Page<Employee> findByDepartmentId(Long deptId, Pageable pageable);
@@ -126,7 +126,7 @@ public Page<Employee> getEmployeesByDept(Long deptId, int page, int size) {
 }
 ```
 
-### ✅ Вариант 4: DTO Projection (для списков)
+###  Вариант 4: DTO Projection (для списков)
 ```java
 // В репозитории
 @Query("SELECT new com.example.dto.EmployeeDTO(e.id, e.name, e.salary) FROM Employee e")
@@ -137,9 +137,9 @@ List<EmployeeDTO> findAllDTOs();
 
 ---
 
-## 3️⃣ UPDATE (Обновление)
+## 3 UPDATE (Обновление)
 
-### ✅ Вариант 1: Полное обновление (через сущность)
+###  Вариант 1: Полное обновление (через сущность)
 ```java
 @Transactional
 public Employee updateEmployee(Long id, EmployeeDTO dto) {
@@ -154,7 +154,7 @@ public Employee updateEmployee(Long id, EmployeeDTO dto) {
 }
 ```
 
-### ✅ Вариант 2: Частичное обновление (PATCH)
+###  Вариант 2: Частичное обновление (PATCH)
 ```java
 @Transactional
 public Employee patchEmployee(Long id, Map<String, Object> updates) {
@@ -173,7 +173,7 @@ public Employee patchEmployee(Long id, Map<String, Object> updates) {
 }
 ```
 
-### ✅ Вариант 3: Массовое обновление (HQL)
+###  Вариант 3: Массовое обновление (HQL)
 ```java
 // В репозитории
 @Modifying
@@ -185,25 +185,25 @@ int increaseSalary(@Param("deptId") Long deptId, @Param("factor") BigDecimal fac
 @Transactional
 public void bulkIncreaseSalary(Long deptId, BigDecimal factor) {
     int updated = repo.increaseSalary(deptId, factor);
-    em.clear(); // ⚠️ Обязательно очистить кэш после bulk-операции!
+    em.clear(); //  Обязательно очистить кэш после bulk-операции!
 }
 ```
 
-### ⚠️ Ошибки
+###  Ошибки
 ```java
-// ❌ Обновление без транзакции
+//  Обновление без транзакции
 emp.setSalary(newSalary); // изменения не сохранятся
 
-// ❌ Bulk update без clear()
+//  Bulk update без clear()
 repo.increaseSalary(deptId, factor);
 // Кэш Hibernate не знает об изменениях, могут быть неконсистентные данные
 ```
 
 ---
 
-## 4️⃣ DELETE (Удаление)
+## 4 DELETE (Удаление)
 
-### ✅ Вариант 1: По ID
+###  Вариант 1: По ID
 ```java
 @Transactional
 public void deleteEmployee(Long id) {
@@ -214,7 +214,7 @@ public void deleteEmployee(Long id) {
 }
 ```
 
-### ✅ Вариант 2: По сущности (с каскадами)
+###  Вариант 2: По сущности (с каскадами)
 ```java
 @Transactional
 public void deleteEmployee(Employee emp) {
@@ -222,7 +222,7 @@ public void deleteEmployee(Employee emp) {
 }
 ```
 
-### ✅ Вариант 3: Массовое удаление (HQL)
+###  Вариант 3: Массовое удаление (HQL)
 ```java
 // В репозитории
 @Modifying
@@ -234,40 +234,40 @@ int deleteByDepartment(@Param("deptId") Long deptId);
 @Transactional
 public void deleteByDept(Long deptId) {
     repo.deleteByDepartment(deptId);
-    em.clear(); // ⚠️ Очистка кэша обязательна
+    em.clear(); //  Очистка кэша обязательна
 }
 ```
 
 ---
 
-## 📊 Сводная таблица CRUD-операций
+##  Сводная таблица CRUD-операций
 
 | Операция | Метод | Когда использовать | Производительность |
 |----------|-------|-------------------|-------------------|
-| **Create** | `repo.save()` | Стандартное создание | ✅ Высокая |
-| **Read by ID** | `repo.findById()` | Получение одной сущности | ✅ Высокая |
-| **Read with relations** | `@Query + FETCH` | Избежание N+1 | ✅ Высокая (1 запрос) |
-| **Read list** | `Pageable + Projection` | Списки, таблицы | ✅✅ Очень высокая |
-| **Update single** | `save()` + dirty checking | Изменение полей | ✅ Высокая |
-| **Update bulk** | `@Modifying + UPDATE` | Массовые изменения | ✅✅ Очень высокая |
-| **Delete single** | `deleteById()` | Удаление одной | ✅ Высокая |
-| **Delete bulk** | `@Modifying + DELETE` | Массовое удаление | ✅✅ Очень высокая |
+| **Create** | `repo.save()` | Стандартное создание |  Высокая |
+| **Read by ID** | `repo.findById()` | Получение одной сущности |  Высокая |
+| **Read with relations** | `@Query + FETCH` | Избежание N+1 |  Высокая (1 запрос) |
+| **Read list** | `Pageable + Projection` | Списки, таблицы |  Очень высокая |
+| **Update single** | `save()` + dirty checking | Изменение полей |  Высокая |
+| **Update bulk** | `@Modifying + UPDATE` | Массовые изменения |  Очень высокая |
+| **Delete single** | `deleteById()` | Удаление одной |  Высокая |
+| **Delete bulk** | `@Modifying + DELETE` | Массовое удаление |  Очень высокая |
 
 ---
 
-## ⚠️ Топ-5 ошибок в CRUD
+##  Топ-5 ошибок в CRUD
 
 | Ошибка | Проблема | Решение |
 |--------|----------|---------|
-| ❌ Нет `@Transactional` | Изменения не сохраняются | Добавлять на сервис-методы |
-| ❌ N+1 проблема | 1 + N запросов при итерации | `JOIN FETCH` или `@EntityGraph` |
-| ❌ Bulk без `clear()` | Кэш не синхронизирован с БД | `em.clear()` после `UPDATE/DELETE` |
-| ❌ `EAGER` fetch по умолчанию | Загрузка лишних данных | Использовать `LAZY` + явный `FETCH` |
-| ❌ Возврат сущностей в API | Сериализация, lazy init exception | Использовать DTO / MapStruct |
+|  Нет `@Transactional` | Изменения не сохраняются | Добавлять на сервис-методы |
+|  N+1 проблема | 1 + N запросов при итерации | `JOIN FETCH` или `@EntityGraph` |
+|  Bulk без `clear()` | Кэш не синхронизирован с БД | `em.clear()` после `UPDATE/DELETE` |
+|  `EAGER` fetch по умолчанию | Загрузка лишних данных | Использовать `LAZY` + явный `FETCH` |
+|  Возврат сущностей в API | Сериализация, lazy init exception | Использовать DTO / MapStruct |
 
 ---
 
-## ✅ Полный пример сервиса
+##  Полный пример сервиса
 
 ```java
 @Service
@@ -327,7 +327,7 @@ public class EmployeeService {
 
 ---
 
-## 🎯 Итоговые рекомендации
+##  Итоговые рекомендации
 
 1. **Всегда `@Transactional`** на методах записи (CUD)
 2. **`readOnly = true`** на методах чтения (оптимизация Hibernate)

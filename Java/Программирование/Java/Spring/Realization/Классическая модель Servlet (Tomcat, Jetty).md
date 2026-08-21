@@ -1,5 +1,5 @@
 
-## 1️⃣ Архитектура классического Spring MVC
+## 1 Архитектура классического Spring MVC
 
 В классической модели Spring работает на **Servlet-контейнере** (Tomcat, Jetty, Undertow). Основные компоненты:
 
@@ -28,9 +28,9 @@ Client
 
 ---
 
-## 2️⃣ Пошаговое объяснение
+## 2 Пошаговое объяснение
 
-### 🔹 Шаг 1: HTTP-запрос приходит на сервер
+###  Шаг 1: HTTP-запрос приходит на сервер
 
 - Пользователь делает запрос к API, например:
     
@@ -44,7 +44,7 @@ GET /articles/123
 
 ---
 
-### 🔹 Шаг 2: Поток из пула потоков
+###  Шаг 2: Поток из пула потоков
 
 - Tomcat имеет **пул потоков**, например 200 потоков.
     
@@ -60,7 +60,7 @@ Thread-101 <- обрабатывает запрос GET /articles/123
 
 ---
 
-### 🔹 Шаг 3: DispatcherServlet
+###  Шаг 3: DispatcherServlet
 
 - Tomcat передаёт запрос **Servlet**, в Spring это **`DispatcherServlet`**.
     
@@ -81,7 +81,7 @@ public class ArticleController {
 
 ---
 
-### 🔹 Шаг 4: HandlerMapping и Controller
+###  Шаг 4: HandlerMapping и Controller
 
 - `DispatcherServlet` использует **HandlerMapping**, чтобы определить, какой метод контроллера должен обработать запрос.
     
@@ -90,7 +90,7 @@ public class ArticleController {
 
 ---
 
-### 🔹 Шаг 5: HandlerAdapter и сервисный слой
+###  Шаг 5: HandlerAdapter и сервисный слой
 
 - `HandlerAdapter` вызывает метод контроллера.
     
@@ -106,7 +106,7 @@ Article article = articleRepository.findById(id);
 
 ---
 
-### 🔹 Шаг 6: ViewResolver / ResponseBody
+###  Шаг 6: ViewResolver / ResponseBody
 
 - Контроллер возвращает объект (`Article`), Spring сериализует его в **JSON** (если `@RestController`).
     
@@ -115,14 +115,14 @@ Article article = articleRepository.findById(id);
 
 ---
 
-### 🔹 Шаг 7: Поток освобождается
+###  Шаг 7: Поток освобождается
 
 - После отправки ответа поток возвращается в **пул потоков**, готовый для следующего запроса.
     
 
 ---
 
-## 3️⃣ Особенности блокирующей модели
+## 3 Особенности блокирующей модели
 
 |Особенность|Пояснение|
 |---|---|
@@ -133,7 +133,7 @@ Article article = articleRepository.findById(id);
 
 ---
 
-## 4️⃣ Пример Thread Pool Tomcat
+## 4 Пример Thread Pool Tomcat
 
 - Параметры в `application.properties` (Spring Boot):
     
@@ -153,17 +153,17 @@ server.tomcat.accept-count=100
 
 ---
 
-## 5️⃣ Пример с Spring Security
+## 5 Пример с Spring Security
 
 - Поток также обрабатывает фильтры Spring Security:
     
 
 ```
 Thread-101
- ├─ SecurityContextPersistenceFilter
- ├─ JwtTokenFilter / UsernamePasswordAuthenticationFilter
- ├─ ExceptionTranslationFilter
- └─ DispatcherServlet -> Controller
+  SecurityContextPersistenceFilter
+  JwtTokenFilter / UsernamePasswordAuthenticationFilter
+  ExceptionTranslationFilter
+  DispatcherServlet -> Controller
 ```
 
 - Всё происходит **в рамках одного потока** на весь жизненный цикл запроса.
@@ -171,7 +171,7 @@ Thread-101
 
 ---
 
-## 6️⃣ Итог
+## 6 Итог
 
 1. Классическая модель = **thread-per-request**.
     

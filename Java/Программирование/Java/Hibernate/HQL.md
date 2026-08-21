@@ -7,21 +7,21 @@ HQL = JPQL + расширения Hibernate
 
 ---
 
-## 🔹 HQL vs JPQL vs SQL
+##  HQL vs JPQL vs SQL
 
 | Критерий | SQL | JPQL (JPA) | HQL (Hibernate) |
 |----------|-----|------------|-----------------|
 | Объект запроса | Таблицы, столбцы | Сущности, поля | Сущности, поля |
 | Стандарт | ANSI SQL | JPA спецификация | Проприетарный (Hibernate) |
-| Полиформизм | ❌ Нет | ✅ `SELECT e FROM Employee e` вернёт подклассы | ✅ + дополнительные ключевые слова |
-| Переносимость | Зависит от диалекта СУБД | ✅ Работает на любом JPA-провайдере | ⚠️ Привязка к Hibernate (миграция обычно trivial) |
+| Полиформизм |  Нет |  `SELECT e FROM Employee e` вернёт подклассы |  + дополнительные ключевые слова |
+| Переносимость | Зависит от диалекта СУБД |  Работает на любом JPA-провайдере |  Привязка к Hibernate (миграция обычно trivial) |
 | Расширения | Native SQL | Ограничены стандартом | `WITH` в JOIN, `FILTER`, `KEY()`, `VALUE()`, `INDEX()` для коллекций |
 
-> 💡 В Spring Data JPA аннотация `@Query` по умолчанию использует **JPQL/HQL синтаксис**. Для чистого SQL добавляют `nativeQuery = true`.
+>  В Spring Data JPA аннотация `@Query` по умолчанию использует **JPQL/HQL синтаксис**. Для чистого SQL добавляют `nativeQuery = true`.
 
 ---
 
-## 🔹 Базовый синтаксис
+##  Базовый синтаксис
 
 ```java
 // 1. Выборка всех сущностей (алиас обязателен в JPQL/HQL)
@@ -44,7 +44,7 @@ HAVING AVG(e.salary) > :threshold
 ORDER BY AVG(e.salary) DESC
 ```
 
-### 🔑 Правила синтаксиса
+###  Правила синтаксиса
 - Имена сущностей и полей **чувствительны к регистру** (как в Java)
 - Алиасы **обязательны** при обращении к полям: `e.name`, а не `Employee.name`
 - Параметры: `:named` или `?1` (позиционные с индексами, начиная с 1)
@@ -52,20 +52,20 @@ ORDER BY AVG(e.salary) DESC
 
 ---
 
-## 🔹 Продвинутые возможности HQL
+##  Продвинутые возможности HQL
 
 | Фича | Синтаксис | Примечание |
 |------|-----------|------------|
 | **Polymorphic query** | `FROM Person p` | Вернёт `Employee`, `Contractor` и т.д. |
 | **FETCH JOIN** | `SELECT DISTINCT e FROM Employee e JOIN FETCH e.department` | Загружает коллекцию/связь в одном запросе, избегает N+1 |
 | **Subqueries** | `WHERE e.salary > (SELECT AVG(s.salary) FROM Employee s)` | Поддерживаются в `WHERE` и `SELECT` |
-| **Bulk UPDATE/DELETE** | `UPDATE Employee e SET e.salary = e.salary * 1.1 WHERE e.department = :dept` | ⚠️ Не вызывают каскады, `@PreUpdate`/`@PreRemove`, не обновляют L2/L1 кэш автоматически |
+| **Bulk UPDATE/DELETE** | `UPDATE Employee e SET e.salary = e.salary * 1.1 WHERE e.department = :dept` |  Не вызывают каскады, `@PreUpdate`/`@PreRemove`, не обновляют L2/L1 кэш автоматически |
 | **Коллекции & Map** | `WHERE SIZE(e.tasks) > 5` / `WHERE KEY(e.settings) = 'theme'` | `SIZE()`, `INDEX()`, `KEY()`, `VALUE()` |
 | **WITH clause** | `LEFT JOIN e.projects p WITH p.status = 'ACTIVE'` | Фильтрация на уровне JOIN (Hibernate-специфично) |
 
 ---
 
-## 🔹 Выполнение запросов (Java API)
+##  Выполнение запросов (Java API)
 
 ```java
 // 1. Типизированный запрос (рекомендуется)
@@ -89,7 +89,7 @@ Employee emp = em.createQuery("SELECT e FROM Employee e WHERE e.id = :id", Emplo
 
 ---
 
-## ⚠️ Подводные камни & Best Practices
+##  Подводные камни & Best Practices
 
 | Проблема | Решение |
 |----------|---------|
@@ -102,7 +102,7 @@ Employee emp = em.createQuery("SELECT e FROM Employee e WHERE e.id = :id", Emplo
 
 ---
 
-## 📊 Когда использовать HQL/JPQL?
+##  Когда использовать HQL/JPQL?
 | Задача | Рекомендуемый подход |
 |--------|----------------------|
 | Простой CRUD по ID | `em.find()`, `repository.findById()` |
@@ -114,12 +114,12 @@ Employee emp = em.createQuery("SELECT e FROM Employee e WHERE e.id = :id", Emplo
 
 ---
 
-## ✅ Чек-лист написания HQL
-1. ✅ Использовать имена сущностей/полей Java, а не таблицы БД
-2. ✅ Всегда задавать алиасы (`e`, `d`, `p`)
-3. ✅ Предпочитать именованные параметры `:name`
-4. ✅ Для DTO использовать `SELECT new package.Class(...)`
-5. ✅ Проверять `setFirstResult`/`setMaxResults` на корректность с `JOIN FETCH`
-6. ✅ Тестировать с `spring.jpa.show-sql=true` или `org.hibernate.SQL=DEBUG`
+##  Чек-лист написания HQL
+1.  Использовать имена сущностей/полей Java, а не таблицы БД
+2.  Всегда задавать алиасы (`e`, `d`, `p`)
+3.  Предпочитать именованные параметры `:name`
+4.  Для DTO использовать `SELECT new package.Class(...)`
+5.  Проверять `setFirstResult`/`setMaxResults` на корректность с `JOIN FETCH`
+6.  Тестировать с `spring.jpa.show-sql=true` или `org.hibernate.SQL=DEBUG`
 
 Если скинете конкретный сценарий (сущности, связь, что хотите получить), напишу оптимальный HQL-запрос с пояснениями по производительности и кэшированию.

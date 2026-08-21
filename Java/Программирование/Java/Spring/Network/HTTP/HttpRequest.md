@@ -1,11 +1,11 @@
-# 🧭 1. `java.net.http.HttpRequest` (Java 11+)
+#  1. `java.net.http.HttpRequest` (Java 11+)
 
 Это стандартный **HTTP-клиент** в Java без Spring, появившийся в **Java 11**.  
 Используется вместе с `HttpClient` и `HttpResponse`.
 
 ---
 
-### ✅ Пример:
+###  Пример:
 
 ```java
 import java.net.URI;
@@ -33,7 +33,7 @@ public class SimpleClient {
 
 ---
 
-### 📦 Основные методы билдера:
+###  Основные методы билдера:
 
 |Метод|Назначение|
 |---|---|
@@ -45,7 +45,7 @@ public class SimpleClient {
 
 ---
 
-### 📤 Пример POST с телом:
+###  Пример POST с телом:
 
 ```java
 HttpRequest request = HttpRequest.newBuilder()
@@ -57,7 +57,7 @@ HttpRequest request = HttpRequest.newBuilder()
 
 ---
 
-### 📩 Ответ:
+###  Ответ:
 
 ```java
 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -67,19 +67,19 @@ System.out.println(response.body());       // Тело ответа
 
 ---
 
-## ⚙️ Отличия от Spring `RestTemplate`
+##  Отличия от Spring `RestTemplate`
 
 |Критерий|`HttpClient` (Java 11)|`RestTemplate` (Spring)|
 |---|---|---|
 |Уровень|Низкоуровневый|Высокоуровневый|
-|Сериализация JSON|❌ вручную|✅ автоматически|
-|Multipart / Form|❌ вручную|✅ встроено|
+|Сериализация JSON| вручную| автоматически|
+|Multipart / Form| вручную| встроено|
 |Простота|Прост, но многословен|Очень удобен|
-|Асинхронность|✅ Поддерживается (`sendAsync`)|⚠️ Нет (только блокирующий)|
+|Асинхронность| Поддерживается (`sendAsync`)| Нет (только блокирующий)|
 
 ---
 
-# 🧱 2. `org.springframework.http.HttpRequest` (Spring)
+#  2. `org.springframework.http.HttpRequest` (Spring)
 
 > Это интерфейс, который **описывает входящий HTTP-запрос** внутри Spring Framework.
 
@@ -87,7 +87,7 @@ System.out.println(response.body());       // Тело ответа
 
 ---
 
-### 📦 Определение:
+###  Определение:
 
 ```java
 public interface HttpRequest extends HttpMessage {
@@ -100,7 +100,7 @@ public interface HttpRequest extends HttpMessage {
 
 ---
 
-### ✅ Пример в `ClientHttpRequestInterceptor`:
+###  Пример в `ClientHttpRequestInterceptor`:
 
 ```java
 import org.springframework.http.HttpRequest;
@@ -124,11 +124,11 @@ public class AuthHeaderInterceptor implements ClientHttpRequestInterceptor {
 }
 ```
 
-💡 Этот код внедряет токен в каждый исходящий запрос `RestTemplate`.
+ Этот код внедряет токен в каждый исходящий запрос `RestTemplate`.
 
 ---
 
-### 📥 Пример в серверной части:
+###  Пример в серверной части:
 
 Если ты хочешь получить `HttpRequest` (например, чтобы посмотреть заголовки или URI запроса) — можно использовать **`HttpServletRequest`**, а не `HttpRequest`.
 
@@ -145,7 +145,7 @@ public ResponseEntity<?> showInfo(HttpServletRequest request) {
 
 ---
 
-# 🧩 Сводная таблица
+#  Сводная таблица
 
 |Класс|Где используется|Что делает|Пример|
 |---|---|---|---|
@@ -155,7 +155,7 @@ public ResponseEntity<?> showInfo(HttpServletRequest request) {
 
 ---
 
-# ⚡ В двух словах:
+#  В двух словах:
 
 - `HttpEntity` → тело + заголовки
     

@@ -3,7 +3,7 @@
 
 ---
 
-# 📌 Основные аннотации JPA (Jakarta Persistence)
+#  Основные аннотации JPA (Jakarta Persistence)
 
 ## **1. Аннотации для сущностей**
 
@@ -64,7 +64,7 @@
 
 ---
 
-# 📦 Пример минимальной сущности JPA
+#  Пример минимальной сущности JPA
 
 ```java
 import jakarta.persistence.*;

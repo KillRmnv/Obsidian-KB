@@ -1,23 +1,23 @@
-# ☕ J2SE 1.2 — «Java 2 Platform, Standard Edition»
+#  J2SE 1.2 — «Java 2 Platform, Standard Edition»
 
 (Кодовое имя: **Playground**, релиз: **8 декабря 1998 года**)
 
 ---
 
-## 🌍 Общая характеристика
+##  Общая характеристика
 
 **J2SE 1.2** — это одна из **самых значимых и переломных версий Java**.  
 Она настолько расширила платформу, что Sun Microsystems решила **переименовать Java**:
 
-> 💡 “Java 2 Platform” — появилось разделение на **J2SE (Standard)**, **J2EE (Enterprise)** и **J2ME (Micro)**.
+>  “Java 2 Platform” — появилось разделение на **J2SE (Standard)**, **J2EE (Enterprise)** и **J2ME (Micro)**.
 
 JDK 1.2 стал основой «современной» Java, которую мы знаем: коллекции, Swing, графика, безопасность и многое другое появились именно здесь.
 
 ---
 
-## ⚙️ Ключевые нововведения
+##  Ключевые нововведения
 
-### 1️⃣ Java Collections Framework (JCF)
+### 1 Java Collections Framework (JCF)
 
 Одна из самых революционных функций:
 
@@ -30,7 +30,7 @@ JDK 1.2 стал основой «современной» Java, которую 
     `ArrayList`, `LinkedList`, `HashSet`, `TreeSet`, `HashMap`, `TreeMap`, `Collections`.
     
 
-📘 Пример:
+ Пример:
 
 ```java
 List<String> list = new ArrayList<>();
@@ -41,11 +41,11 @@ for (String s : list) {
 }
 ```
 
-> 💡 До 1.2 в Java не существовало единого унифицированного фреймворка коллекций — только устаревшие `Vector`, `Hashtable`, `Enumeration`.
+>  До 1.2 в Java не существовало единого унифицированного фреймворка коллекций — только устаревшие `Vector`, `Hashtable`, `Enumeration`.
 
 ---
 
-### 2️⃣ Swing GUI Toolkit
+### 2 Swing GUI Toolkit
 
 - Новый пакет `javax.swing.*`
     
@@ -56,7 +56,7 @@ for (String s : list) {
 - Компоненты с "J": `JButton`, `JLabel`, `JPanel`, `JFrame`, `JTable`, `JTree`, `JTextField` и др.
     
 
-📘 Пример:
+ Пример:
 
 ```java
 import javax.swing.*;
@@ -73,7 +73,7 @@ public class SwingDemo {
 
 ---
 
-### 3️⃣ Java Plug-in и Java 2D
+### 3 Java Plug-in и Java 2D
 
 **Java Plug-in**:
 
@@ -87,7 +87,7 @@ public class SwingDemo {
 
 ---
 
-### 4️⃣ Security Architecture (JAAS и Policy)
+### 4 Security Architecture (JAAS и Policy)
 
 - Модель безопасности переработана:
     
@@ -102,7 +102,7 @@ public class SwingDemo {
 
 ---
 
-### 5️⃣ Java Naming and Directory Interface (JNDI)
+### 5 Java Naming and Directory Interface (JNDI)
 
 - Унифицированный API для доступа к каталогам и службам (LDAP, DNS, RMI registry, NDS).
     
@@ -111,7 +111,7 @@ public class SwingDemo {
 
 ---
 
-### 6️⃣ Корни современного RMI
+### 6 Корни современного RMI
 
 - Улучшена сериализация.
     
@@ -122,7 +122,7 @@ public class SwingDemo {
 
 ---
 
-### 7️⃣ Java IDL (CORBA Integration)
+### 7 Java IDL (CORBA Integration)
 
 - Встроенная поддержка CORBA (Common Object Request Broker Architecture).
     
@@ -131,7 +131,7 @@ public class SwingDemo {
 
 ---
 
-### 8️⃣ Collections + Algorithms Utilities
+### 8 Collections + Algorithms Utilities
 
 - Новый класс `java.util.Collections` — утилиты для сортировки, поиска и синхронизации.
     
@@ -140,7 +140,7 @@ public class SwingDemo {
 
 ---
 
-### 9️⃣ Garbage Collector и JVM улучшения
+### 9 Garbage Collector и JVM улучшения
 
 - Новый **generational garbage collector**.
     
@@ -151,7 +151,7 @@ public class SwingDemo {
 
 ---
 
-### 🔟 Serialization API
+###  Serialization API
 
 - Стал стандартным механизмом для сохранения состояния объектов.
     
@@ -162,7 +162,7 @@ public class SwingDemo {
 
 ---
 
-## 🧱 Архитектура и платформы
+##  Архитектура и платформы
 
 После 1.2 Java официально разделилась на три платформы:
 
@@ -174,7 +174,7 @@ public class SwingDemo {
 
 ---
 
-## 🧩 Примеры других нововведений
+##  Примеры других нововведений
 
 - Новый API для drag-and-drop.
     
@@ -189,7 +189,7 @@ public class SwingDemo {
 
 ---
 
-## 💡 Почему J2SE 1.2 важен
+##  Почему J2SE 1.2 важен
 
 - Заложил **основу современной архитектуры Java**.
     
@@ -200,18 +200,18 @@ public class SwingDemo {
 
 ---
 
-## 📅 Резюме по ключевым фичам
+##  Резюме по ключевым фичам
 
 |Компонент|Введение|Значение|
 |:--|:--|:--|
-|Collections Framework|✅|Унификация структур данных|
-|Swing|✅|Новый GUI-фреймворк|
-|Java 2D|✅|Современная графика|
-|Security Policy|✅|Гранулированная безопасность|
-|Serialization|✅|Сохранение объектов|
-|JNDI, CORBA|✅|Интеграция с внешними системами|
-|JVM GC / JIT|✅|Производительность|
-|Java Plug-in|✅|Апплеты с внешним JVM|
+|Collections Framework||Унификация структур данных|
+|Swing||Новый GUI-фреймворк|
+|Java 2D||Современная графика|
+|Security Policy||Гранулированная безопасность|
+|Serialization||Сохранение объектов|
+|JNDI, CORBA||Интеграция с внешними системами|
+|JVM GC / JIT||Производительность|
+|Java Plug-in||Апплеты с внешним JVM|
 
 ---
 

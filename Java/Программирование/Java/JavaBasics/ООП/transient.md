@@ -166,7 +166,7 @@ public record User(String name, transient String password) implements Serializab
     // Компоненты record implicitly final
     // transient компоненты не включаются в canonical constructor автоматически
 }
-// ⚠️ Records + transient — редко используется, требует осторожности
+//  Records + transient — редко используется, требует осторожности
 ```
 
 ### С Externalizable
@@ -206,18 +206,18 @@ public class CustomSerialization implements Externalizable {
 ## Антипаттерны
 
 ```java
-// ❌ Плохо: transient для важных данных без восстановления
+//  Плохо: transient для важных данных без восстановления
 public class Bad implements Serializable {
     private transient int id; // Потеряется при десериализации!
 }
 
-// ❌ Плохо: полагаться на default значения без readObject
+//  Плохо: полагаться на default значения без readObject
 public class AlsoBad implements Serializable {
     private transient List<Data> items; // Становится null!
     // Нет readObject() — NPE при использовании!
 }
 
-// ✅ Хорошо: явное восстановление
+//  Хорошо: явное восстановление
 public class Good implements Serializable {
     private transient List<Data> items;
     

@@ -7,7 +7,7 @@
 
 ---
 
-## 🧠 Основная идея
+##  Основная идея
 
 Когда ты отправляешь HTTP-запрос через `RestTemplate`, тебе нужно сообщить серверу:
 
@@ -26,16 +26,16 @@ Spring упрощает это с помощью `HttpHeaders`.
 
 ---
 
-## 🧰 Пример базового использования
+##  Пример базового использования
 
 `HttpHeaders headers = new HttpHeaders(); headers.setContentType(MediaType.APPLICATION_JSON); headers.setAccept(List.of(MediaType.APPLICATION_JSON)); headers.set("Authorization", "Bearer " + apiKey);  HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);  ResponseEntity<Map> response = restTemplate.postForEntity(         "https://example.com/api/v1/analyze",         request,         Map.class );`
 
-🔹 `HttpEntity` объединяет тело запроса (`body`) и заголовки (`headers`).  
-🔹 `RestTemplate` использует это, чтобы собрать правильный HTTP-запрос.
+ `HttpEntity` объединяет тело запроса (`body`) и заголовки (`headers`).  
+ `RestTemplate` использует это, чтобы собрать правильный HTTP-запрос.
 
 ---
 
-## ⚙️ Часто используемые заголовки
+##  Часто используемые заголовки
 
 | Заголовок         | Описание                          | Пример                                    |
 | ----------------- | --------------------------------- | ----------------------------------------- |
@@ -46,16 +46,16 @@ Spring упрощает это с помощью `HttpHeaders`.
 | `Cache-Control`   | Политика кэширования              | `no-cache`, `max-age=3600`                |
 | `Accept-Language` | Язык предпочтений                 | `ru-RU, en;q=0.8`                         |
 | `Referer`         | Источник запроса                  | `https://myapp.com/page`                  |
-## 🧩 Пример для multipart-запроса (как с Imgbb)
+##  Пример для multipart-запроса (как с Imgbb)
 
 `HttpHeaders headers = new HttpHeaders(); headers.setContentType(MediaType.MULTIPART_FORM_DATA);  MultiValueMap<String, Object> body = new LinkedMultiValueMap<>(); body.add("key", apiKey); body.add("image", Base64.getEncoder().encodeToString(file.getBytes())); body.add("name", file.getOriginalFilename());  HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);  ResponseEntity<Map> response = restTemplate.postForEntity(         "https://api.imgbb.com/1/upload",         requestEntity,         Map.class );`
 
-🧠 Здесь `HttpHeaders` сообщает серверу, что тело запроса — **мультичастевое (multipart/form-data)**,  
+ Здесь `HttpHeaders` сообщает серверу, что тело запроса — **мультичастевое (multipart/form-data)**,  
 и Spring автоматически сформирует корректный формат запроса с разделителями (boundary).
 
 ---
 
-## 📥 Использование в контроллерах (приёме запросов)
+##  Использование в контроллерах (приёме запросов)
 
 Ты можешь также читать заголовки в контроллере:
 
@@ -67,13 +67,13 @@ Spring упрощает это с помощью `HttpHeaders`.
 
 ---
 
-## 🧱 Пример комбинированного использования
+##  Пример комбинированного использования
 
 `HttpHeaders headers = new HttpHeaders(); headers.setContentType(MediaType.APPLICATION_JSON); headers.set("Authorization", "Bearer " + apiKey); headers.set("Accept-Language", "ru-RU");  // тело запроса Map<String, Object> body = Map.of("query", "analyze image");  // объединяем HttpEntity<Map<String, Object>> entity = new HttpEntity<>(body, headers);  // отправляем ResponseEntity<String> response = restTemplate.exchange(         "https://api.example.com/analyze",         HttpMethod.POST,         entity,         String.class );`
 
 ---
 
-## 💡 Важные методы `HttpHeaders`
+##  Важные методы `HttpHeaders`
 
 |Метод|Что делает|
 |---|---|
@@ -87,7 +87,7 @@ Spring упрощает это с помощью `HttpHeaders`.
 
 ---
 
-## 🔐 Пример авторизации с Bearer-токеном
+##  Пример авторизации с Bearer-токеном
 
 `HttpHeaders headers = new HttpHeaders(); headers.setBearerAuth("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...");`
 
@@ -97,7 +97,7 @@ Spring упрощает это с помощью `HttpHeaders`.
 
 ---
 
-## ⚠️ Типичные ошибки
+##  Типичные ошибки
 
 |Ошибка|Причина|
 |---|---|

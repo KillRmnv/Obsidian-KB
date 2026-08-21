@@ -1,6 +1,6 @@
 
 
-## 1️⃣ `HttpSecurity`
+## 1 `HttpSecurity`
 
 - Класс из пакета `org.springframework.security.config.annotation.web.builders.HttpSecurity`.
     
@@ -25,13 +25,13 @@
 
 ---
 
-## 2️⃣ Цепочка методов
+## 2 Цепочка методов
 
 Методы в цепочке — это **билдеры**, которые конфигурируют HTTP-безопасность. Разберём твой пример по шагам:
 
 ---
 
-### 🔹 1. `http.csrf().disable()`
+###  1. `http.csrf().disable()`
 
 - Отключает **CSRF-защиту** (Cross-Site Request Forgery).
     
@@ -44,7 +44,7 @@ http.csrf().disable();
 
 ---
 
-### 🔹 2. `cors()`
+###  2. `cors()`
 
 - Включает поддержку **CORS** (Cross-Origin Resource Sharing)
     
@@ -59,7 +59,7 @@ http.cors();
 
 ---
 
-### 🔹 3. `exceptionHandling().authenticationEntryPoint(...)`
+###  3. `exceptionHandling().authenticationEntryPoint(...)`
 
 - Настраивает **обработку ошибок аутентификации**.
     
@@ -73,7 +73,7 @@ http.cors();
 
 ---
 
-### 🔹 4. `sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)`
+###  4. `sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)`
 
 - Конфигурирует политику сессий.
     
@@ -87,7 +87,7 @@ http.cors();
 
 ---
 
-### 🔹 5. `authorizeRequests()`
+###  5. `authorizeRequests()`
 
 - Настраивает **доступ к URL**.
     
@@ -105,7 +105,7 @@ http.cors();
 
 ---
 
-### 🔹 6. `http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)`
+###  6. `http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)`
 
 - Добавляет **кастомный фильтр** (`JwtTokenFilter`) **перед стандартным фильтром аутентификации по username/password**.
     
@@ -118,27 +118,27 @@ http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.clas
 
 ---
 
-## 3️⃣ Визуальная цепочка
+## 3 Визуальная цепочка
 
 Можно представить так:
 
 ```
 HTTP request
- ├─ CSRF disabled
- ├─ CORS enabled
- ├─ Exception handling → 401 if unauthorized
- ├─ Stateless session
- ├─ URL rules (antMatchers)
- │    ├─ /users/login → permitAll
- │    ├─ /articles/feed → authenticated
- │    └─ ... 
- ├─ JwtTokenFilter → проверка JWT
- └─ UsernamePasswordAuthenticationFilter → проверка логина/пароля
+  CSRF disabled
+  CORS enabled
+  Exception handling → 401 if unauthorized
+  Stateless session
+  URL rules (antMatchers)
+      /users/login → permitAll
+      /articles/feed → authenticated
+      ... 
+  JwtTokenFilter → проверка JWT
+  UsernamePasswordAuthenticationFilter → проверка логина/пароля
 ```
 
 ---
 
-## 4️⃣ Важно
+## 4 Важно
 
 - `HttpSecurity` — **билдер**, каждый метод возвращает объект для дальнейшей конфигурации.
     

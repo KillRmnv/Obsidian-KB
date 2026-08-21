@@ -5,12 +5,12 @@
 YAML использует **отступы** для создания иерархии. **Только пробелы, никаких табов!**
 
 ```yaml
-# ❌ НЕПРАВИЛЬНО (табуляция)
+#  НЕПРАВИЛЬНО (табуляция)
 spring:
 →datasource:
 →→url: jdbc:...
 
-# ✅ ПРАВИЛЬНО (2 пробела)
+#  ПРАВИЛЬНО (2 пробела)
 spring:
   datasource:
     url: jdbc:...
@@ -79,7 +79,7 @@ public class ИнфоСервис {
 
 ---
 
-### Способ 2: @ConfigurationProperties (сложные объекты) ⭐ РЕКОМЕНДУЕТСЯ
+### Способ 2: @ConfigurationProperties (сложные объекты)  РЕКОМЕНДУЕТСЯ
 
 ```yaml
 # application.yaml
@@ -216,10 +216,10 @@ public class КонфигПроверка {
 
 ```
 src/main/resources/
-├── application.yaml          # общая конфигурация
-├── application-dev.yaml      # разработка
-├── application-test.yaml     # тестирование
-└── application-prod.yaml     # продакшен
+ application.yaml          # общая конфигурация
+ application-dev.yaml      # разработка
+ application-test.yaml     # тестирование
+ application-prod.yaml     # продакшен
 ```
 
 ```yaml

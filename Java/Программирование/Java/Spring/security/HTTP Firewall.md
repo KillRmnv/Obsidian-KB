@@ -9,7 +9,7 @@
 | 7   | **`OAuth2AuthorizationRequestRedirectFilter`** _(если используется OAuth2)_               | Начинает OAuth2 авторизацию                                                              |
 | 8   | **`UsernamePasswordAuthenticationFilter`**                                                | Обрабатывает логин через `username/password`                                             |
 | 9   | **`ConcurrentSessionFilter`** _(если используется управление сессиями)_                   | Контролирует количество активных сессий                                                  |
-| 🔹  | **`JwtTokenFilter`                                                                        | Проверяет JWT и устанавливает `SecurityContext`                                          |
+|   | **`JwtTokenFilter`                                                                        | Проверяет JWT и устанавливает `SecurityContext`                                          |
 | 10  | **`BearerTokenAuthenticationFilter`** _(если используется Spring OAuth2 Resource Server)_ | Альтернатива JWT-фильтру для OAuth2                                                      |
 | 11  | **`RequestCacheAwareFilter`**                                                             | Сохраняет URL, чтобы после логина можно было вернуться на предыдущую страницу            |
 | 12  | **`SecurityContextHolderAwareRequestFilter`**                                             | Делает `HttpServletRequest` aware of security (например, `request.getUserPrincipal()`)   |

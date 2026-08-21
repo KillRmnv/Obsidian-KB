@@ -1,4 +1,4 @@
-## 1️⃣ Что такое `@AuthenticationPrincipal`
+## 1 Что такое `@AuthenticationPrincipal`
 
 - Находится в пакете:
     

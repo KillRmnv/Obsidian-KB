@@ -1,6 +1,6 @@
 
 
-## 1️⃣ Что такое `ResponseEntity`
+## 1 Что такое `ResponseEntity`
 
 - `ResponseEntity<T>` — это **обёртка над HTTP-ответом**, которая содержит:
     
@@ -17,7 +17,7 @@
 
 ---
 
-## 2️⃣ Простой пример
+## 2 Простой пример
 
 ```java
 @RestController
@@ -44,7 +44,7 @@ public class ArticleController {
 
 ---
 
-## 3️⃣ Установка заголовков
+## 3 Установка заголовков
 
 Можно добавлять заголовки через `ResponseEntity`:
 
@@ -68,7 +68,7 @@ Content-Type: application/json
 
 ---
 
-## 4️⃣ Другие способы создать ResponseEntity
+## 4 Другие способы создать ResponseEntity
 
 |Метод|Что делает|
 |---|---|
@@ -80,7 +80,7 @@ Content-Type: application/json
 
 ---
 
-## 5️⃣ Отличие от простого возвращения объекта
+## 5 Отличие от простого возвращения объекта
 
 ```java
 @GetMapping("/{id}")
@@ -98,7 +98,7 @@ public Article getArticle(@PathVariable String id) {
 
 ---
 
-## 6️⃣ Итог
+## 6 Итог
 
 - **ResponseEntity** = полный контроль над HTTP-ответом.
     

@@ -7,14 +7,14 @@ config.font_size = 15.0
 config.harfbuzz_features = {'calt', 'clig', 'liga'}
 config.color_scheme = 'Catppuccin Mocha'
 config.enable_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = true  -- ✅ Скрывать tab, если 1 вкладка
+config.hide_tab_bar_if_only_one_tab = true  --  Скрывать tab, если 1 вкладка
 config.scrollback_lines = 10000
 
 
--- ✅ Позволяем вкладкам занимать как можно больше места
+--  Позволяем вкладкам занимать как можно больше места
 config.tab_max_width = 9999
 
--- ✅ Отключаем "модные" (fancy) вкладки для лучшего отображения сплошной заливки
+--  Отключаем "модные" (fancy) вкладки для лучшего отображения сплошной заливки
 config.use_fancy_tab_bar = false
 
 
@@ -33,7 +33,7 @@ config.window_frame = {
   border_bottom_height = 0,
 }
 
--- ✅ Выделение активного таба и растягивание на всю ширину
+--  Выделение активного таба и растягивание на всю ширину
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
   local bg = '#313244'
   local fg = '#cdd6f4'

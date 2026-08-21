@@ -2,7 +2,7 @@
 
 ---
 
-### 🔒 `java.util.concurrent.locks.Lock`
+###  `java.util.concurrent.locks.Lock`
 | Метод | Поведение |
 |-------|-----------|
 | `void lock()` | Блокирует вызывающий поток до получения блокировки. Не прерывается. |
@@ -14,7 +14,7 @@
 
 ---
 
-### ⏱ `java.util.concurrent.locks.Condition`
+###  `java.util.concurrent.locks.Condition`
 | Метод | Поведение |
 |-------|-----------|
 | `void await() throws InterruptedException` | Атомарно освобождает lock, переводит поток в состояние ожидания до `signal()`/прерывания/ложного пробуждения. Перед возвратом повторно захватывает lock. |
@@ -27,7 +27,7 @@
 
 ---
 
-### 🏭 `java.util.concurrent.Executor` / `ExecutorService`
+###  `java.util.concurrent.Executor` / `ExecutorService`
 | Метод | Поведение |
 |-------|-----------|
 | `void execute(Runnable command)` | Передаёт задачу на асинхронное выполнение. Не возвращает результат. |
@@ -42,7 +42,7 @@
 
 ---
 
-### 🧮 `java.util.concurrent.atomic.*` (ключевые методы)
+###  `java.util.concurrent.atomic.*` (ключевые методы)
 | Метод | Поведение |
 |-------|-----------|
 | `T get()` | Читает текущее значение с семантикой `volatile`. |
@@ -57,7 +57,7 @@
 
 ---
 
-### 📦 `java.util.concurrent.BlockingQueue`
+###  `java.util.concurrent.BlockingQueue`
 | Метод | Поведение |
 |-------|-----------|
 | `boolean add(E e)` | Вставляет элемент. Бросает `IllegalStateException` при ограниченной ёмкости. |
@@ -73,7 +73,7 @@
 
 ---
 
-### 🚦 Синхронизаторы (`java.util.concurrent`)
+###  Синхронизаторы (`java.util.concurrent`)
 #### `CountDownLatch`
 | Метод | Поведение |
 |-------|-----------|
@@ -115,7 +115,7 @@
 
 ---
 
-### ⚡ `java.util.concurrent.CompletableFuture`
+###  `java.util.concurrent.CompletableFuture`
 | Метод | Поведение |
 |-------|-----------|
 | `boolean complete(T value)` | Завершает future значением, если ещё не завершён. |
@@ -138,7 +138,7 @@
 
 ---
 
-### 🌊 `java.util.concurrent.ForkJoinPool` & `ForkJoinTask`
+###  `java.util.concurrent.ForkJoinPool` & `ForkJoinTask`
 | Метод | Поведение |
 |-------|-----------|
 | `static ForkJoinPool commonPool()` | Возвращает общий пул для параллельных стримов. |
@@ -153,7 +153,7 @@
 
 ---
 
-### 🧲 `java.lang.invoke.VarHandle` (управление памятью и атомарностью)
+###  `java.lang.invoke.VarHandle` (управление памятью и атомарностью)
 | Метод | Поведение |
 |-------|-----------|
 | `T get(Object... args)` | Читает значение с семантикой `volatile`. |
@@ -167,7 +167,7 @@
 
 ---
 
-### 🧵 `java.lang.ThreadLocal` / `InheritableThreadLocal`
+###  `java.lang.ThreadLocal` / `InheritableThreadLocal`
 | Метод | Поведение |
 |-------|-----------|
 | `T get()` | Возвращает значение, привязанное к текущему потоку. |
@@ -179,5 +179,5 @@
 
 ---
 
-### 📌 Примечание
+###  Примечание
 API `java.util.concurrent` содержит сотни методов в дополнительных утилитах (`Executors`, `CompletionService`, `StampedLock`, `Flow`/`Reactive Streams`, `ScheduledExecutorService` и др.). Выше приведён полный перечень **базовых примитивов синхронизации, управления потоками, атомарных операций и асинхронных конструкций**, определённых в спецификации Java SE. Если требуется детализация по конкретному классу (например, `StampedLock`, `Flow.Publisher/Subscriber`, `CompletionService`, `ScheduledExecutorService`) — укажите, распишу его методы в том же формате.

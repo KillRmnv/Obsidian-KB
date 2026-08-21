@@ -11,11 +11,11 @@ public interface MyInterface {
     final int CONSTANT4 = 40;
     public static final int CONSTANT5 = 50; // Полная форма
     
-    // ❌ Ошибки компиляции:
+    //  Ошибки компиляции:
     private int privateField = 10;      // Illegal!
     protected int protectedField = 20;  // Illegal!
     
-    // ❌ Ошибки:
+    //  Ошибки:
     int mutable;                        // Must be initialized!
     static int notFinal;                // Must be final implicitly!
 }
@@ -82,12 +82,12 @@ public interface Logger {
         log("ERROR", msg);
     }
     
-    // ✅ Private метод разрешён (Java 9+)
+    //  Private метод разрешён (Java 9+)
     private void log(String level, String msg) {
         System.out.println("[" + level + "] " + msg);
     }
     
-    // ❌ Private поле — запрещено!
+    //  Private поле — запрещено!
     // private String prefix = "[LOG]"; // Compile error!
 }
 ```

@@ -1,4 +1,4 @@
-### 📤 HTTP Request (raw)
+###  HTTP Request (raw)
 
 ```http
 POST /api/v1/users HTTP/1.1
@@ -38,7 +38,7 @@ If-Modified-Since: Wed, 21 Oct 2025 07:28:00 GMT
 
 ---
 
-### 🧠 Что тут показано (и зачем)
+###  Что тут показано (и зачем)
 
 |Заголовок|Назначение|
 |---|---|
@@ -92,7 +92,7 @@ If-Modified-Since: Wed, 21 Oct 2025 07:28:00 GMT
 
 ## Response
 
-### 📥 HTTP Response (raw)
+###  HTTP Response (raw)
 
 ```http
 HTTP/1.1 201 Created
@@ -131,7 +131,7 @@ Location: https://example.com/api/v1/users/101
 
 ---
 
-### 🧠 Что тут важно
+###  Что тут важно
 
 |Заголовок|Зачем нужен|
 |---|---|

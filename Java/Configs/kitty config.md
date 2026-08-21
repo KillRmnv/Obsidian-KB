@@ -1,5 +1,5 @@
 ```
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
+# /* ----  https://github.com/JaKooLit  ---- */  #
 
 # you can choose themes from $HOME/.config/kitty/kitty-themes/
 include ./kitty-themes/00-Default.conf

@@ -5,21 +5,21 @@
 Когда **несколько Bean'ов одного типа**, Spring не знает какой выбрать. `@Qualifier` указывает конкретный Bean по имени.
 
 ```
-┌─────────────────────────────────────────┐
-│           Application Context           │
-│                                         │
-│  ┌─────────────┐   ┌─────────────┐     │
-│  │  MasterCard │   │    Visa     │     │
-│  │  (бин №1)   │   │  (бин №2)   │     │
-│  │ @Component  │   │ @Component  │     │
-│  │("master")   │   │  ("visa")   │     │
-│  └─────────────┘   └─────────────┘     │
-│         ▲                 ▲             │
-│         └─────────────────┘             │
-│              |                          │
-│    @Autowired + @Qualifier("master")   │
-│              → выбирает MasterCard      │
-└─────────────────────────────────────────┘
+
+           Application Context           
+                                         
+          
+    MasterCard        Visa          
+    (бин №1)        (бин №2)        
+   @Component      @Component       
+  ("master")        ("visa")        
+          
+                                       
+                      
+              |                          
+    @Autowired + @Qualifier("master")   
+              → выбирает MasterCard      
+
 ```
 
 ---
@@ -48,14 +48,14 @@ public class Visa implements ПлатёжнаяСистема {
 }
 ```
 
-### ❌ Ошибка: Spring не знает что выбрать
+###  Ошибка: Spring не знает что выбрать
 
 ```java
 @Service
 public class СервисОплаты {
     
     @Autowired
-    private ПлатёжнаяСистема система;  // ❌ ОШИБКА! Два бина: MasterCard и Visa
+    private ПлатёжнаяСистема система;  //  ОШИБКА! Два бина: MasterCard и Visa
     
     // NoUniqueBeanDefinitionException: 
     // expected single matching bean but found 2
@@ -83,7 +83,7 @@ public class Visa implements ПлатёжнаяСистема { }
 public class СервисОплаты {
     
     @Autowired
-    @Qualifier("visa")  // ✅ Берём конкретно Visa
+    @Qualifier("visa")  //  Берём конкретно Visa
     private ПлатёжнаяСистема система;
 }
 ```
@@ -137,7 +137,7 @@ public class Магазин {
 }
 ```
 
-### Способ 2: Конструктор (рекомендуется) ⭐
+### Способ 2: Конструктор (рекомендуется) 
 
 ```java
 @Service
@@ -217,7 +217,7 @@ public class ПлатёжныйШлюз {
 ```java
 // Помечаем один бин как "основной"
 @Component
-@Primary  // ✅ Этот бин будет выбран по умолчанию
+@Primary  //  Этот бин будет выбран по умолчанию
 public class Visa implements ПлатёжнаяСистема { }
 
 @Component
@@ -227,7 +227,7 @@ public class MasterCard implements ПлатёжнаяСистема { }
 public class Магазин {
     
     @Autowired
-    private ПлатёжнаяСистема система;  // ✅ Автоматически Visa (Primary)
+    private ПлатёжнаяСистема система;  //  Автоматически Visa (Primary)
     
     @Autowired
     @Qualifier("masterCard")  // Явно просим MasterCard
@@ -256,7 +256,7 @@ public interface Уведомление {
 @Qualifier("email")
 public class EmailУведомление implements Уведомление {
     public void отправить(String сообщение, String получатель) {
-        System.out.println("📧 Email to " + получатель + ": " + сообщение);
+        System.out.println(" Email to " + получатель + ": " + сообщение);
     }
 }
 
@@ -264,7 +264,7 @@ public class EmailУведомление implements Уведомление {
 @Qualifier("sms")
 public class SmsУведомление implements Уведомление {
     public void отправить(String сообщение, String получатель) {
-        System.out.println("📱 SMS to " + получатель + ": " + сообщение);
+        System.out.println(" SMS to " + получатель + ": " + сообщение);
     }
 }
 
@@ -272,7 +272,7 @@ public class SmsУведомление implements Уведомление {
 @Qualifier("push")
 public class PushУведомление implements Уведомление {
     public void отправить(String сообщение, String получатель) {
-        System.out.println("🔔 Push to " + получатель + ": " + сообщение);
+        System.out.println(" Push to " + получатель + ": " + сообщение);
     }
 }
 

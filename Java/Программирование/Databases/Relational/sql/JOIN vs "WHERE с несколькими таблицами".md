@@ -4,7 +4,7 @@
 
 ---
 
-## 🔍 Что вы имеете в виду под "обычным указанием"
+##  Что вы имеете в виду под "обычным указанием"
 
 Старый синтаксис (SQL-89) — **неявное соединение (implicit join)**:
 
@@ -24,15 +24,15 @@ JOIN departments ON employees.dept_id = departments.id;
 
 ---
 
-## ⚖️ Сравнение подходов
+##  Сравнение подходов
 
-### 1️⃣ **Читаемость и понятность**
+### 1 **Читаемость и понятность**
 
 |Неявный (старый)|Явный (JOIN)|
 |---|---|
 |`sql<br>SELECT *<br>FROM employees e, departments d, locations l, countries c<br>WHERE e.dept_id = d.id<br> AND d.location_id = l.id<br> AND l.country_id = c.id<br> AND e.salary > 50000<br> AND c.name = 'USA';<br>`|`sql<br>SELECT *<br>FROM employees e<br>JOIN departments d ON e.dept_id = d.id<br>JOIN locations l ON d.location_id = l.id<br>JOIN countries c ON l.country_id = c.id<br>WHERE e.salary > 50000<br> AND c.name = 'USA';<br>`|
 
-**Победитель: JOIN (явный)** ✅
+**Победитель: JOIN (явный)** 
 
 - Сразу видно, **как** связаны таблицы
     
@@ -41,7 +41,7 @@ JOIN departments ON employees.dept_id = departments.id;
 - Логика чтения: "от employees через departments к locations"
     
 
-### 2️⃣ **Случайное перекрестное соединение**
+### 2 **Случайное перекрестное соединение**
 
 Неявный синтаксис — **бомба замедленного действия**:
 
@@ -55,14 +55,14 @@ SELECT * FROM employees, departments;
 SELECT * FROM employees
 JOIN departments;  -- ОШИБКА! Нужно ON или USING
 
-**Победитель: JOIN (явный)** ✅
+**Победитель: JOIN (явный)** 
 
 - Требует явного указания условия соединения
     
 - Невозможно случайно сделать CROSS JOIN
     
 
-### 3️⃣ **Разные типы JOIN**
+### 3 **Разные типы JOIN**
 
 Неявный синтаксис **не поддерживает** многие типы соединений:
 
@@ -79,7 +79,7 @@ SELECT *, NULL, NULL FROM employees
 WHERE dept_id NOT IN (SELECT id FROM departments);
 -- Ужасно, медленно, нечитаемо
 
-**Победитель: JOIN (явный)** ✅
+**Победитель: JOIN (явный)** 
 
 - FULL JOIN, LEFT JOIN, RIGHT JOIN — только с явным синтаксисом
     
@@ -88,7 +88,7 @@ WHERE dept_id NOT IN (SELECT id FROM departments);
 - Кросс-соединения (CROSS JOIN) — явно и понятно
     
 
-### 4️⃣ **Производительность**
+### 4 **Производительность**
 
 **Сюрприз:** для простых INNER JOIN разницы **нет**!
 
@@ -107,7 +107,7 @@ JOIN departments ON employees.dept_id = departments.id;
 
 **Но для OUTER JOIN разница есть** — неявный синтаксис их просто не поддерживает.
 
-### 5️⃣ **Сложные условия соединения**
+### 5 **Сложные условия соединения**
 
 sql
 

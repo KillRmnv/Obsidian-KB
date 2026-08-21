@@ -41,13 +41,13 @@ public class LoggingAspect {
     // Выполняется перед методом
     @Before("serviceLayer()")
     public void logBefore(JoinPoint joinPoint) {
-        System.out.println("▶️ Вызов метода: " + joinPoint.getSignature().getName());
+        System.out.println(" Вызов метода: " + joinPoint.getSignature().getName());
     }
 
     // Выполняется после успешного возврата
     @AfterReturning(pointcut = "serviceLayer()", returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
-        System.out.println("✅ Метод " + joinPoint.getSignature().getName()
+        System.out.println(" Метод " + joinPoint.getSignature().getName()
                 + " вернул: " + result);
     }
 
@@ -57,7 +57,7 @@ public class LoggingAspect {
         long start = System.currentTimeMillis();
         Object result = pjp.proceed();
         long time = System.currentTimeMillis() - start;
-        System.out.println("⏱️ " + pjp.getSignature().getName() + " выполнен за " + time + " мс");
+        System.out.println(" " + pjp.getSignature().getName() + " выполнен за " + time + " мс");
         return result;
     }
 }

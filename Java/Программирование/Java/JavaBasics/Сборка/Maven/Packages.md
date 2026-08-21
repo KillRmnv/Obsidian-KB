@@ -157,12 +157,12 @@ mvn package -Pprod
 
 ## 7. Best Practices
 
-- ✅ Use semantic versioning for your project
-- ✅ Configure source and Javadoc JARs for publishing
-- ✅ Use the Shade plugin for executable JARs
-- ✅ Skip tests in CI/CD pipelines when appropriate
-- ✅ Clean build artifacts before packaging
-- ✅ Use profiles for environment-specific configurations
+-  Use semantic versioning for your project
+-  Configure source and Javadoc JARs for publishing
+-  Use the Shade plugin for executable JARs
+-  Skip tests in CI/CD pipelines when appropriate
+-  Clean build artifacts before packaging
+-  Use profiles for environment-specific configurations
 
 Example: Generate source and Javadoc JARs:
 ```xml

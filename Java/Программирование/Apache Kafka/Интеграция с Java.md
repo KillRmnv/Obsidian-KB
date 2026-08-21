@@ -3,7 +3,7 @@
 Properties props = new Properties(); props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092"); props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName()); props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName()); KafkaProducer<String, String> producer = new KafkaProducer<>(props); ProducerRecord<String, String> record = new ProducerRecord<>("orders", "orderId123", "Order created"); producer.send(record); producer.close();
 ```
 
-## 🔹 `BOOTSTRAP_SERVERS_CONFIG`
+##  `BOOTSTRAP_SERVERS_CONFIG`
 
 `props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");`
 
@@ -26,7 +26,7 @@ Kafka работает так:
 
 Поэтому достаточно **1 адреса**, но в проде пишут 2–3 для отказоустойчивости:
 
-## 🔹 `KEY_SERIALIZER_CLASS_CONFIG`
+##  `KEY_SERIALIZER_CLASS_CONFIG`
 
 `props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,           StringSerializer.class.getName());`
 
@@ -167,7 +167,7 @@ Kafka работает так:
 
 Если поменять `group.id` → Kafka считает, что это **новый читатель**, и даст читать всё заново.
 
-👉 Это частый вопрос: _«Как перечитать весь топик?»_  
+ Это частый вопрос: _«Как перечитать весь топик?»_  
 Ответ: сменить group.id
 
 ## `AUTO_OFFSET_RESET_CONFIG`
@@ -210,7 +210,7 @@ Kafka работает так:
 
 ---
 
-## 🔥 `consumer.subscribe(List.of("orders"));`
+##  `consumer.subscribe(List.of("orders"));`
 
 Ты **не говоришь**, какие partitions читать.  
 Ты говоришь: _«Я хочу читать этот топик в составе группы»_.

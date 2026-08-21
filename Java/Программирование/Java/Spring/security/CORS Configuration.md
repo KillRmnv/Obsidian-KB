@@ -1,5 +1,5 @@
 
-## 1️⃣ Расшифровка
+## 1 Расшифровка
 
 **CORS** = **Cross-Origin Resource Sharing**  
 → «Совместное использование ресурсов между разными источниками (доменами)».
@@ -27,7 +27,7 @@ fetch("http://api.example.com/data") // JS на http://localhost:3000
 
 ---
 
-## 2️⃣ Почему нужен CORS
+## 2 Почему нужен CORS
 
 Без CORS:
 
@@ -46,7 +46,7 @@ CORS добавляет специальные HTTP-заголовки, чтоб
 
 ---
 
-## 3️⃣ Основные HTTP-заголовки CORS
+## 3 Основные HTTP-заголовки CORS
 
 |Заголовок|Что делает|
 |---|---|
@@ -59,7 +59,7 @@ CORS добавляет специальные HTTP-заголовки, чтоб
 
 ---
 
-## 4️⃣ Preflight-запросы
+## 4 Preflight-запросы
 
 - Если JS делает **непростой запрос** (например, с Authorization или методом PUT/DELETE), браузер сначала отправляет **OPTIONS-запрос** (preflight) к серверу.
     
@@ -86,7 +86,7 @@ Access-Control-Allow-Headers: Content-Type, Authorization
 
 ---
 
-## 5️⃣ CORS в Spring
+## 5 CORS в Spring
 
 - **Spring MVC**: через `WebMvcConfigurer` → `addCorsMappings`
     
@@ -111,7 +111,7 @@ public CorsConfigurationSource corsConfigurationSource() {
 
 ---
 
-## 1️⃣ Первый пример — `CorsConfigurationSource`
+## 1 Первый пример — `CorsConfigurationSource`
 
 ```java
 @Bean
@@ -127,7 +127,7 @@ public CorsConfigurationSource corsConfigurationSource() {
 }
 ```
 
-### 🔹 Что делает
+###  Что делает
 
 1. Разрешает все домены: `*` → любой сайт может обращаться к API.
     
@@ -142,7 +142,7 @@ public CorsConfigurationSource corsConfigurationSource() {
 5. Применяется ко всем URL (`/**`).
     
 
-### 🔹 Особенности
+###  Особенности
 
 - Строго контролирует, какие заголовки можно отправлять.
     
@@ -153,7 +153,7 @@ public CorsConfigurationSource corsConfigurationSource() {
 
 ---
 
-## 2️⃣ Второй пример — `WebMvcConfigurer`
+## 2 Второй пример — `WebMvcConfigurer`
 
 ```java
 @Bean
@@ -176,7 +176,7 @@ public WebMvcConfigurer corsConfigurer() {
 }
 ```
 
-### 🔹 Что делает
+###  Что делает
 
 1. Разрешает **конкретные домены** (localhost:8080–8084).
     
@@ -189,7 +189,7 @@ public WebMvcConfigurer corsConfigurer() {
 5. Применяется ко всем URL (`/**`).
     
 
-### 🔹 Особенности
+###  Особенности
 
 - Подходит, когда фронтенд **отдельный домен** и использует авторизацию по cookies.
     
@@ -200,7 +200,7 @@ public WebMvcConfigurer corsConfigurer() {
 
 ---
 
-## 3️⃣ Главные различия
+## 3 Главные различия
 
 |Характеристика|CorsConfigurationSource|WebMvcConfigurer|
 |---|---|---|

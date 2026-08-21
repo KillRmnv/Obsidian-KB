@@ -769,13 +769,13 @@
 ### Для Junior Kotlin Developer (6-12 месяцев опыта):
 
 **Обязательные разделы:**
-1. ✅ Kotlin Basics (все 50 вопросов)
-2. ✅ Null Safety (все 40 вопросов)
-3. ✅ Data Classes, Sealed Classes (40 вопросов)
-4. ✅ Extension Functions (30 вопросов)
-5. ✅ Coroutines Basics (40 вопросов)
-6. ✅ Collections (все 30 вопросов)
-7. ✅ Kotlin vs Java (20 вопросов)
+1.  Kotlin Basics (все 50 вопросов)
+2.  Null Safety (все 40 вопросов)
+3.  Data Classes, Sealed Classes (40 вопросов)
+4.  Extension Functions (30 вопросов)
+5.  Coroutines Basics (40 вопросов)
+6.  Collections (все 30 вопросов)
+7.  Kotlin vs Java (20 вопросов)
 
 **Практика:**
 - 20-30 coding задач
@@ -789,13 +789,13 @@
 ### Для Middle Kotlin Developer (1-3 года опыта):
 
 **Обязательные разделы:**
-1. ✅ Все вопросы Junior уровня
-2. ✅ Coroutines Advanced (все 80 вопросов)
-3. ✅ Flow & Channels (все 40 вопросов)
-4. ✅ Higher-Order Functions (все 50 вопросов)
-5. ✅ Kotlin + Spring Boot (все 40 вопросов)
-6. ✅ Kotlin + JPA (все 30 вопросов)
-7. ✅ Advanced Topics (20 вопросов)
+1.  Все вопросы Junior уровня
+2.  Coroutines Advanced (все 80 вопросов)
+3.  Flow & Channels (все 40 вопросов)
+4.  Higher-Order Functions (все 50 вопросов)
+5.  Kotlin + Spring Boot (все 40 вопросов)
+6.  Kotlin + JPA (все 30 вопросов)
+7.  Advanced Topics (20 вопросов)
 
 **Практика:**
 - 40-50 coding задач
@@ -810,12 +810,12 @@
 ### Для Senior Kotlin Developer (3+ года опыта):
 
 **Обязательные разделы:**
-1. ✅ Все 600+ вопросов
-2. ✅ Kotlin Multiplatform (все 20 вопросов)
-3. ✅ Kotlin DSL (все 20 вопросов)
-4. ✅ Advanced Topics (все 30 вопросов)
-5. ✅ Архитектурные решения
-6. ✅ Performance optimization
+1.  Все 600+ вопросов
+2.  Kotlin Multiplatform (все 20 вопросов)
+3.  Kotlin DSL (все 20 вопросов)
+4.  Advanced Topics (все 30 вопросов)
+5.  Архитектурные решения
+6.  Performance optimization
 
 **Практика:**
 - Все 50 coding задач
@@ -848,7 +848,7 @@
 
 ## СОВЕТЫ ПО СОБЕСЕДОВАНИЮ
 
-### ✅ DO:
+###  DO:
 - Объясняйте, почему выбрали Kotlin-specific решение
 - Сравнивайте с Java подходом
 - Обсуждайте null safety преимущества
@@ -856,7 +856,7 @@
 - Показывайте практические примеры
 - Упоминайте best practices
 
-### ❌ DON'T:
+###  DON'T:
 - Не пишите Java-style Kotlin код
 - Не игнорируйте null safety
 - Не злоупотребляйте `!!` operator
@@ -870,4 +870,4 @@
 **Дата:** Январь 2026  
 **Статус:** Актуально для Kotlin 1.9+, Coroutines 1.7+
 
-**Удачи на Kotlin собеседованиях! 🚀**
+**Удачи на Kotlin собеседованиях! **
