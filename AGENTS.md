@@ -17,6 +17,11 @@ Personal Obsidian knowledge base — markdown notes, not a code project. Content
 - Do not commit `.smart_env/`
 - No build system, no tests, no linter — this is a documentation vault
 
+## Gotchas
+
+- Root `.gitignore` is broken — it contains a shell script (`cat > .gitignore << 'EOF'`), not actual patterns. The real `.smart_env/` ignore lives in `Java/.gitignore`. If you need to add global ignores, fix the root `.gitignore` first.
+- `Java/.obsidian/workspace.json` is tracked in git and shows as modified locally. The AGENTS.md instruction to not commit it still holds — treat it as local state.
+
 ## Conventions
 
 - Commit messages are in Russian
