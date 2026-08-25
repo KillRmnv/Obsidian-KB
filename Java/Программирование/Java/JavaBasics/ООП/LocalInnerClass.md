@@ -1,1 +1,1 @@
-![[image-1.png]]
+![[Программирование/Java/JavaBasics/ООП/image-1.png]]

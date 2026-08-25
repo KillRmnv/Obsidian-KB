@@ -15,6 +15,7 @@ Personal Obsidian knowledge base — markdown notes, not a code project. Content
 - **Git LFS** is required for: `*.pdf *.docx *.pptx *.xlsx *.zip *.psd *.ai *.mp4 *.mov *.png *.jpg *.jpeg` — see `.gitattributes`
 - Do not commit `.obsidian/workspace.json` or other local Obsidian state
 - Do not commit `.smart_env/`
+- The entire `.obsidian/` directory (plugins, themes, config) is tracked in git. If you add or modify plugin files, commit them.
 - No build system, no tests, no linter — this is a documentation vault
 
 ## Gotchas
@@ -24,7 +25,7 @@ Personal Obsidian knowledge base — markdown notes, not a code project. Content
 
 ## Conventions
 
-- Commit messages are in Russian
+- Commit messages are in English (one exception: `05e5f75 тестирование и Sping`)
 - Prefer editing existing notes over creating new ones
 - Notes use Obsidian wikilinks (`[[note]]`) and embeds (`![[image.png]]`) for internal references
 - No YAML frontmatter observed in existing notes — do not add it unless the note already has it
