@@ -11,14 +11,10 @@
             "id": "27d75c8ad19ede48",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Программирование/Golang/basics/databases/sql go.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "sql go"
+              "title": "Новая вкладка"
             }
           }
         ]
@@ -190,8 +186,25 @@
   },
   "active": "27d75c8ad19ede48",
   "lastOpenFiles": [
-    "Программирование/Golang/basics/net/net.md",
     "Программирование/Golang/basics/databases/sql go.md",
+    "Программирование/Golang/databases/sql go.md",
+    "Программирование/Golang/databases",
+    "Программирование/Golang/net/Тестирование HTTP.md",
+    "Программирование/Golang/net/Обработка форм и файлов.md",
+    "Программирование/Golang/net/net.md",
+    "Программирование/Golang/net/kafka go.md",
+    "Программирование/Golang/net/grpc go.md",
+    "Программирование/Golang/net/WebSocket.md",
+    "Программирование/Golang/net/UDP.md",
+    "Программирование/Golang/net/TCP.md",
+    "Программирование/Golang/net/REST API.md",
+    "Программирование/Golang/net/Middleware.md",
+    "Программирование/Golang/net/HTTP статусы и методы.md",
+    "Программирование/Golang/net/HTTP сервер.md",
+    "Программирование/Golang/net/HTTP клиент.md",
+    "Программирование/Golang/net/Graceful Shutdown.md",
+    "Программирование/Golang/net",
+    "Программирование/Golang/basics/net/net.md",
     "Программирование/Golang/basics/databases",
     "Программирование/Golang/basics/net/grpc go.md",
     "Программирование/Golang/basics/net/kafka go.md",
@@ -202,23 +215,8 @@
     "Программирование/Golang/basics/net/Graceful Shutdown.md",
     "Программирование/Golang/basics/net/Middleware.md",
     "Программирование/Golang/basics/net/HTTP клиент.md",
-    "Программирование/Golang/basics/net/REST API.md",
-    "Программирование/Golang/basics/net/HTTP сервер.md",
-    "Программирование/Golang/basics/net/UDP.md",
-    "Программирование/Golang/basics/net/TCP.md",
-    "Программирование/Golang/basics/io/Files.md",
     "Программирование/Golang/basics/net",
-    "Программирование/Golang/basics/io/Readers.md",
-    "Программирование/Golang/basics/corrutines/sync.Mutex.md",
-    "Программирование/Golang/basics/corrutines/Select.md",
-    "Программирование/Golang/basics/corrutines/Range and closed.md",
-    "Программирование/Golang/basics/corrutines/Buffered Channels.md",
-    "Программирование/Golang/basics/corrutines/channel.md",
-    "Программирование/Golang/basics/corrutines/corrutine.md",
-    "Программирование/Golang/basics/Generics/Generic types.md",
     "Программирование/Golang/basics/corrutines",
-    "Программирование/Golang/basics/struct.md",
-    "Программирование/Golang/basics/Generics/Type parameters Go.md",
     "Программирование/Golang/basics/Generics",
     "Программирование/Golang/basics/io",
     "Программирование/Golang/basics/errors",
@@ -234,8 +232,6 @@
     "Программирование/Java/JavaBasics/ООП/image-4.png",
     "Программирование/Java/JavaBasics/ООП/image-2.png",
     "Программирование/Без названия",
-    "Программирование/AI/ИАД/темы",
-    "Программирование/AI/ИАД/тесы",
     "Без названия.canvas",
     "Untitled.canvas"
   ]
