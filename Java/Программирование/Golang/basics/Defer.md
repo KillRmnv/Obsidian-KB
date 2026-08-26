@@ -13,4 +13,6 @@ func main() {
 	fmt.Println("hello")
 }
 
+hello
+world
 ```

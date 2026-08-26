@@ -68,7 +68,7 @@
 28. Что такое autoboxing и unboxing?
 29. Что такое wrapper классы?
 30. Что такое var (начиная с Java 10)?
-31. Можно ли использовать private или protected переменные в [[interface]]?
+31. Можно ли использовать private или protected переменные в [[Программирование/Java/JavaBasics/ООП/interface]]?
 32. Что такое default методы в интерфейсах (Java 8+)?
 33. Можно ли объявить main method как [[final]]?(не влияет, он должен public static void main(именно такое имя))
 34. Можно ли импортировать те же самые package/class дважды? Какие последствия?(компилятор проигнорит, но если есть конфликт, то выдаст ошибку:java.util.List и java.awt.List)

@@ -36,4 +36,7 @@ func main() {
 	fmt.Println(j) // see the new value of j
 }
 
+42
+21
+73
 ```

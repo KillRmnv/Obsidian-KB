@@ -6,6 +6,8 @@ The receiver appears in its own argument list between the `func` keyword and t
 
 In this example, the `Abs` method has a receiver of type `Vertex` named `v`.
 
+IT WORKS WITH A COPY OF A VALUE
+
 ```go
 package main
 
@@ -25,29 +27,6 @@ func (v Vertex) Abs() float64 {
 func main() {
 	v := Vertex{3, 4}
 	fmt.Println(v.Abs())
-}
-
-```
-
-```go
-package main
-
-import (
-	"fmt"
-	"math"
-)
-
-type Vertex struct {
-	X, Y float64
-}
-
-func Abs(v Vertex) float64 {
-	return math.Sqrt(v.X*v.X + v.Y*v.Y)
-}
-
-func main() {
-	v := Vertex{3, 4}
-	fmt.Println(Abs(v))
 }
 
 ```

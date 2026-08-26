@@ -9,9 +9,9 @@ func main() {
 	var s []int = primes[1:4]
 	fmt.Println(s)
 }
-
+3,5,7
 ```
-
+we took element that is placed on a starting index and go taking elements while we not heet high-1 element and then stop
 ```go
 package main
 
