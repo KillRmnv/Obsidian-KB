@@ -28,7 +28,6 @@ go get github.com/confluentinc/confluent-kafka-go/v2/kafka
 ```
 
 ## Producer (отправка сообщений)
-
 ### Базовый Producer
 
 ```go

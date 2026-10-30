@@ -64,11 +64,6 @@ bd = bd.multiply(new BigDecimal("1.2")); // Новый объект!
 ### 4. **java.time API (Java 8+)**
 
 Все классы даты/времени неизменяемы:
-
-java
-
-Copy
-
 ```java
 LocalDate date = LocalDate.now();           // 2024-03-15
 LocalDate nextWeek = date.plusWeeks(1);     // Новый объект!
@@ -166,10 +161,6 @@ Matcher matcher = pattern.matcher("123");  // Matcher — отдельный mut
 
 ### 10. **Currency, Locale**
 
-java
-
-Copy
-
 ```java
 Currency usd = Currency.getInstance("USD"); // Immutable
 Locale ru = Locale.forLanguageTag("ru-RU"); // Immutable
@@ -208,16 +199,12 @@ public final class ImmutableCheck {  // 1. Класс final
 
 ## Сравнение: Mutable vs Immutable
 
-Table
-
-Copy
-
-|Характеристика|Mutable (StringBuilder)|Immutable (String)|
-|:--|:--|:--|
-|Изменение|`append()` меняет объект|`concat()` создаёт новый|
-|Потокобезопасность|Нужна синхронизация|Безопасен по умолчанию|
-|Использование|Сборка строк в цикле|Ключи Map, константы|
-|Производительность|Быстрее при множестве изменений|Медленнее при частых модификациях|
+| Характеристика     | Mutable (StringBuilder)         | Immutable (String)                |
+| :----------------- | :------------------------------ | :-------------------------------- |
+| Изменение          | `append()` меняет объект        | `concat()` создаёт новый          |
+| Потокобезопасность | Нужна синхронизация             | Безопасен по умолчанию            |
+| Использование      | Сборка строк в цикле            | Ключи Map, константы              |
+| Производительность | Быстрее при множестве изменений | Медленнее при частых модификациях |
 
 ---
 

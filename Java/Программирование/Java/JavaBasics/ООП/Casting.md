@@ -75,10 +75,6 @@ Integer num = (Integer) text;  //  ClassCastException! Нет связи нас�
 
 #### 3. Raw types и generics
 
-java
-
-Copy
-
 ```java
 List rawList = new ArrayList();
 rawList.add("string");
@@ -91,10 +87,6 @@ for (Object obj : rawList) {
 
 #### 4. Массивы
 
-java
-
-Copy
-
 ```java
 Object[] objects = new String[10];
 objects[0] = "text";
@@ -105,10 +97,6 @@ Integer[] ints = (Integer[]) obj;  //  ClassCastException!
 ```
 
 #### 5. Проблемы с generics (type erasure)
-
-java
-
-Copy
 
 ```java
 List<Integer> intList = new ArrayList<>();

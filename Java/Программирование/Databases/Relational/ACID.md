@@ -291,7 +291,6 @@ SHOW transaction_isolation;
 -- или
 SELECT current_setting('transaction_isolation');
 ```
-
 ### 3. **Блокировки (FOR UPDATE и др.)**
 ```sql
 -- Блокировка строк для обновления
