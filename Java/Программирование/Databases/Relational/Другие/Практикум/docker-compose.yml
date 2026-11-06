@@ -1,0 +1,46 @@
+name: mysql-lab
+
+# MySQL 8.4 для лабораторок ветки [[Реляционные СУБД]].
+# Порт 3307, чтобы не конфликтовать с локальным MySQL и с PG-лабораторией (5433).
+#
+#   docker compose up -d
+#   docker compose down          # остановка, данные сохраняются
+#   docker compose down -v       # полный сброс
+#   docker compose logs -f mysql
+#
+# Подключение:
+#   mysql -h 127.0.0.1 -P 3307 -u root -proot lab
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-lab
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lab
+      TZ: UTC
+    ports:
+      - "3307:3306"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      # «SSD-профиль», чтобы сравнение с PG-лабораторией было честным
+      - --innodb-buffer-pool-size=256M
+      - --innodb-flush-log-at-trx-commit=1
+      - --sync-binlog=1
+      - --slow-query-log=1
+      - --long-query-time=0.3
+      - --performance-schema=ON
+      # по умолчанию RR — специально оставляем, чтобы увидеть gap locks
+    volumes:
+      - mysqldata:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  mysqldata:

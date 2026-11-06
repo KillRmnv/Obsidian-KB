@@ -1,0 +1,154 @@
+# Google Spanner
+
+## Если знаешь PostgreSQL (TL;DR)
+
+1. **Внешне согласованная (externally consistent) БД** на глобальном масштабе: транзакция видит «время» как линейно упорядоченное.
+2. **TrueTime** — GPS + атомные часы в дата-центрах; ошибка часов ограничена сверху, и Spanner **ждёт** этот интервал перед коммитом. Отсюда — цена latency.
+3. **Данные в сплитах (splits), реплицируемых Paxos**; лидер сплита обрабатывает запись.
+4. **`INTERLEAVE`** (ныне `INTERLEAVE IN PARENT`) — дочерние строки физически рядом с родителем → локальные join'ы.
+5. **Нет `VACUUM`**: MVCC-версии с TTL (`gc_ttl`), старые версии удаляются фоново.
+
+## Ниша
+
+Глобальные финансовые системы, инвентарь, реклама, любые сервисы, где нужна согласованность между регионами и недопустимы «грязные» чтения. Google Cloud Spanner; аналог по идеологии — CockroachDB (но без TrueTime), YugabyteDB.
+
+## Архитектура
+
+```
+зоны (regions)          сплиты (splits) по range ключей
+┌────────────┐          ┌──────────────────────┐
+│  zone A    │          │ split 1: [a..f)      │── Paxos-группа
+│  zone B    │  ◄────►  │ split 2: [f..p)      │── Paxos-группа
+│  zone C    │          │ split 3: [p..z)      │── Paxos-группа
+└────────────┘          └──────────────────────┘
+       ▲
+   TrueTime (GPS + atomic clocks)
+```
+
+- **Paxos-группа на сплит**; лидер пишет, кворум подтверждает.
+- **TrueTime**: API даёт интервал `[earliest, latest]`, в котором находится «сейчас». Коммит ждёт `latest` — это и есть цена внешней согласованности.
+- **Multi-region**: `regional` / `multi-region` конфигурации; latency записи зависит от кворума.
+
+## Хранение
+
+| | PostgreSQL | Spanner |
+|---|---|---|
+| Единица | страница 8 КБ | split (диапазон ключей), SST-подобные файлы |
+| Организация | heap | **ordered KV** (ключ → строка), как clustered index по PK |
+| Адрес | `ctid` | ключ (PK) |
+| Индекс | отдельная структура | **отдельная таблица-индекс**, интерливленная с базовой |
+| Длинные значения | TOAST | чанки в KV |
+| Мусор | `VACUUM` | MVCC + `gc_ttl` (автоочистка) |
+
+- **Таблица = отсортированный по PK набор строк.** `ORDER BY pk` бесплатен, `ORDER BY other` — скан/индекс.
+- **`INTERLEAVE IN PARENT`** — строки дочерней таблицы хранятся рядом с родительской (по префиксу ключа): локальные join'ы без сети.
+- **`STORING (col)`** — аналог `INCLUDE`.
+- **`NULL_FILTERED` индексы** (аналог partial) и **`SEARCH`/`VECTOR` индексы** (новые).
+
+## Транзакции и MVCC
+
+- **Транзакции**: `READ WRITE` (Paxos, 2PC при нескольких сплитах), `READ ONLY` (снапшот), `PARTITIONED DML` (массовые `UPDATE`/`DELETE` без транзакции).
+- **Уровни**: `SERIALIZABLE` (по умолчанию для read-write), `REPEATABLE READ`/`READ COMMITTED` для read-only.
+- **`AS OF TIMESTAMP`** — чтение на прошлый момент (в пределах `gc_ttl`, обычно 1 час).
+- **Commit wait**: коммит возвращается после `TrueTime.latest` — это гарантирует внешнюю согласованность.
+- **Конфликты** — `ABORTED` с retry; горячие ключи → contention.
+
+## Журналы и durability
+
+- **Paxos log** на каждый сплит — замена WAL; кворум реплик.
+- **`gc_ttl`** — сколько хранить старые версии (для `AS OF`); больше TTL — больше места.
+- **Backup/Restore** — в GCS; PITR через `AS OF TIMESTAMP` в пределах TTL.
+- **Change Streams** — CDC-поток изменений (аналог logical replication).
+
+## Блокировки и конкурентность
+
+- Блокировки строк/диапазонов на уровне сплита; **deadlock detection** есть.
+- `INFORMATION_SCHEMA.LOCK_STATS` / `SPANNER_SYS.LOCK_STATS` — мониторинг.
+- `SPANNER_SYS.QUERY_STATS_TOP_*` — топ запросов по latency/CPU (аналог `pg_stat_statements`).
+
+```sql
+SELECT * FROM SPANNER_SYS.QUERY_STATS_TOP_10MINUTES;
+SELECT * FROM SPANNER_SYS.LOCK_STATS_TOP_10MINUTES;
+SELECT * FROM INFORMATION_SCHEMA.SPANNER_STATISTICS;
+```
+
+## Диагностика
+
+```sql
+EXPLAIN SELECT * FROM orders WHERE user_id = 42;
+EXPLAIN ANALYZE SELECT ...;        -- есть планы с распределением
+```
+
+- Визуализация — **Query Insights** в консоли (тепловые карты, top queries).
+- `INFORMATION_SCHEMA` + `SPANNER_SYS` — SQL-доступ к метрикам.
+- **`SHOW VARIABLE`** — настройки.
+
+## Индексы и DDL
+
+- `CREATE INDEX` — online, но долгий; `CREATE NULL_FILTERED INDEX` — partial.
+- **`STORING`** — покрывающие колонки.
+- **`INTERLEAVE`** — физическая локальность.
+- **`ALTER TABLE`** — online; `ADD COLUMN` с `DEFAULT` — переписывает (в отличие от PG11+).
+- **`DROP TABLE`** — с `INTERLEAVE`, требует `CASCADE`-порядка.
+
+## Репликация и HA
+
+- **Paxos-кворум** на сплит: потеря зоны → выборы, без потери данных.
+- **Multi-region конфигурации**: `nam3`, `eur3`, `nam-eur-asia1` и т.д.
+- **Read-only транзакции** — с ближайшей реплики (`staleness` опции: `exact`, `max_staleness`).
+- **`MAX_STALENESS`** — ограничить отставание чтения (аналог `hot_standby_feedback`-компромисса, но иначе).
+
+## SQL-диалект: перевод с PG
+
+| PostgreSQL | Spanner (GoogleSQL) |
+|---|---|
+| `LIMIT n OFFSET m` | `LIMIT n OFFSET m` |
+| `SERIAL` | `GENERATED BY DEFAULT AS IDENTITY` (не рекомендуется) / `UUID()` / bit-reversed sequence |
+| `ON CONFLICT` | `INSERT OR UPDATE` (есть), `MERGE` |
+| `RETURNING` | `THEN RETURN` (DML) |
+| `boolean` | `BOOL` |
+| `text` | `STRING(MAX)` |
+| `timestamptz` | `TIMESTAMP` |
+| `jsonb` | `JSON` |
+| `LATERAL` | нет; `UNNEST` + `APPLY`-подобное |
+| `string_agg` | `STRING_AGG` |
+| `::type` | `CAST` |
+| `ILIKE` | нет; `LOWER() LIKE` |
+| схемы | нет схем верхнего уровня (есть named schemas в новых версиях) |
+
+## Грабли для приходящего с PG
+
+1. **Commit latency = TrueTime wait** — глобальные транзакции дороже локальных; проектируй локальность.
+2. **Нет `SERIAL`** в привычном смысле: монотонные счётчики — антипаттерн (hot split).
+3. **`ORDER BY` не по PK** — скан/индекс, как в MySQL clustered.
+4. **`INTERLEAVE` устаревает** (переходят на foreign keys + locality), но всё ещё встречается.
+5. **Транзакция не может быть длинной** — лимиты на размер/время; массовые операции — `PARTITIONED DML`.
+6. **`AS OF` ограничен `gc_ttl`** — PITR «на неделю назад» не выйдет.
+7. **DDL `ADD COLUMN DEFAULT`** переписывает таблицу (в PG11+ — мгновенно).
+8. **SQL-диалект GoogleSQL**, не PG: `UNNEST`, `STRUCT`, `ARRAY` — свои.
+9. **Стоимость** — по CPU/IO и storage; неоптимизированные запросы дорого стоят.
+10. **Эмулятор** (Spanner emulator) не воспроизводит latency/TrueTime — тесты на нём не покажут проблем.
+
+## Что проверить руками
+
+```sql
+SELECT * FROM SPANNER_SYS.QUERY_STATS_TOP_10MINUTES;
+SELECT * FROM SPANNER_SYS.LOCK_STATS_TOP_10MINUTES;
+
+EXPLAIN SELECT * FROM orders WHERE user_id = 42;
+```
+
+```bash
+# Эмулятор
+gcloud emulators spanner start
+```
+
+## Связанное
+
+[[PostgreSQL]] · [[Другие/CockroachDB, TiDB и YugabyteDB]] · [[шардирование]] · [[Сравнения/Репликация и HA]] · [[CAP]]
+
+## Источники
+
+- Google Cloud Spanner Documentation: «Architecture», «TrueTime», «Query execution plans»
+- «Spanner: Google's Globally-Distributed Database» (OSDI 2012)
+- «Spanner: Becoming a SQL System» (SIGMOD 2017)
