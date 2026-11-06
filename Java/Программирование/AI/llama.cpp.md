@@ -1,29 +1,17 @@
 ```sh 
-llama cli \
-  -m ~/.../Ling-3.0-tiny-Q4_K_M.gguf \
-  -t 6 \
-  -c 8192 \
-  -n 2048 \
-  -b 512 \
-  --jinja \
-  --temp 1.0 \
-  --top-p 0.95 \
-  --top-k 20
+llama cli -m "$HOME/models/Ling3.0.gguf" \
+  -dev none -ngl 0 -nr -t 6 -c 8192 --jinja -rea off \
+  --temp 1.0 --top-k 20 --top-p 0.95
 ```
-
 
 ```sh
-llama cli \
-        -m ~/.../Qwen3.8-9B-Q4_K_M.gguf \
-        -t 6 \
-        -c 8192 \
-        -n 1024 \
-        -b 512 \
-        --jinja \
-        --reasoning off
+llama cli -m "$HOME/models/LFM3-1.7B-QAD-Q4_0.gguf" \
+  -dev none -ngl 0 -nr -t 6 -c 8192 --jinja -rea off \
+  --temp 0.1 --top-k 50 --repeat-penalty 1.1
 ```
 
-```
-llama cli -m /home/kirillrmnv/models/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf \
-          -dev none -ngl 0 -nr -t 6 -c 8192 --temp 0
+```sh
+llama cli -m "$HOME/models/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf" \
+  -dev none -ngl 0 -nr -t 6 -c 8192 --jinja -rea off \
+  --temp 1.0 --top-k 20 --top-p 0.95
 ```
