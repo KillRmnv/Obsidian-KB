@@ -1,0 +1,68 @@
+name: pg-lab
+
+# PostgreSQL 18 для экспериментов из ветки [[PostgreSQL]].
+# Порт 5433, чтобы не конфликтовать с локальным сервером на 5432.
+#
+#   docker compose up -d          # запуск
+#   docker compose down           # остановка (данные сохраняются)
+#   docker compose down -v        # полный сброс (удалить том)
+#   docker compose logs -f pg     # логи, включая сообщения о recovery
+#
+# Подключение:
+#   psql -h localhost -p 5433 -U postgres -d lab
+
+services:
+  pg:
+    image: postgres:18
+    container_name: pg-lab
+    restart: unless-stopped
+    shm_size: 256mb
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: lab
+      TZ: UTC
+    ports:
+      - "5433:5432"
+    command:
+      - postgres
+      # расширения диагностики (нужен рестарт — поэтому в command)
+      - -c
+      - shared_preload_libraries=pg_stat_statements,auto_explain
+      - -c
+      - pg_stat_statements.track=all
+      - -c
+      - pg_stat_statements.max=10000
+      # чтобы EXPLAIN показывал реальный I/O
+      - -c
+      - track_io_timing=on
+      # медленные запросы в лог
+      - -c
+      - log_min_duration_statement=300ms
+      - -c
+      - log_lock_waits=on
+      - -c
+      - log_temp_files=0
+      # «SSD-профиль», чтобы индексы были реалистично дешёвыми
+      - -c
+      - random_page_cost=1.1
+      - -c
+      - shared_buffers=256MB
+      - -c
+      - work_mem=8MB
+      - -c
+      - maintenance_work_mem=256MB
+      - -c
+      - max_connections=100
+    volumes:
+      # ВАЖНО: в postgres:18 PGDATA = /var/lib/postgresql/18/docker,
+      # поэтому том монтируется в /var/lib/postgresql (а не .../data).
+      - pgdata:/var/lib/postgresql
+      - ./init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d lab"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:
